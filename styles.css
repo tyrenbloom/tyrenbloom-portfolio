@@ -236,9 +236,11 @@ body::before {
 
   position: fixed;
 
-  top: 0;
+  top: 50%;
 
   right: 2rem;
+
+  transform: translateY(-50%);
 
   display: flex;
 
@@ -261,6 +263,8 @@ body::before {
       bottom: 0;
 
       top: auto;
+
+      transform: none;
 
       left: 0;
 
