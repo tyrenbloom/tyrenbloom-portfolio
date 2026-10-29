@@ -31,6 +31,66 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+/* Reading Progress Bar */
+.reading-progress-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 2px;
+  background-color: var(--ink-300);
+  width: 0%;
+  z-index: 1000;
+  transition: width 0.1s ease-out;
+}
+
+/* Sticky Navigation */
+.sticky-aside {
+  position: fixed;
+  top: 0;
+  right: 2rem;
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  padding: 1rem 0;
+  z-index: 900;
+}
+
+@media (max-width: 640px) {
+  .sticky-aside {
+    right: 0;
+    bottom: 0;
+    top: auto;
+    left: 0;
+    width: 100%;
+    justify-content: center;
+    padding: 0.75rem;
+    border-top: 1px solid var(--ink-500);
+  }
+}
+
+.nav-button {
+  background: none;
+  border: none;
+  padding: 0.4rem 0.75rem;
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--ink-300);
+  cursor: pointer;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.nav-button:hover,
+.nav-button:focus {
+  color: var(--ink-100);
+}
+
+.nav-button.active {
+  color: var(--ink-100);
+  font-weight: 600;
+}
+
 .resume {
   max-width: 760px;
   margin: 0 auto;
@@ -40,6 +100,9 @@ body {
 /* Header */
 .resume-header {
   margin-bottom: 2.5rem;
+  opacity: 0;
+  transform: translateY(12px);
+  animation: headerFadeIn 0.9s ease-out forwards;
 }
 
 .header-name {
@@ -49,6 +112,53 @@ body {
   font-weight: 700;
   color: var(--ink-100);
   line-height: 1.3;
+}
+
+.name-text {
+  display: inline-block;
+  overflow: hidden;
+  white-space: nowrap;
+  border-right: 2px solid var(--ink-100);
+  animation: nameReveal 1.3s cubic-bezier(0.4, 0, 0.2, 1) forwards, nameCarry 0.5s ease forwards 1.3s, nameWidth 0s linear 1.8s forwards;
+  width: 0;
+}
+
+@keyframes headerFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes nameReveal {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes nameCarry {
+  from {
+    border-right-color: var(--ink-100);
+  }
+  to {
+    border-right-color: transparent;
+  }
+}
+
+@keyframes nameWidth {
+  from {
+    width: 100%;
+  }
+  to {
+    width: 0;
+  }
 }
 
 .header-contact {
@@ -67,10 +177,11 @@ body {
   text-decoration: underline;
   text-decoration-color: var(--ink-500);
   text-underline-offset: 2px;
-  transition: text-decoration-width 0.15s ease;
+  transition: text-decoration-width 0.2s ease;
 }
 
-.contact-link:hover {
+.contact-link:hover,
+.contact-link:focus {
   text-decoration-thickness: 2px;
   color: var(--ink-100);
 }
@@ -94,16 +205,49 @@ body {
 .technical-skills,
 .trainings {
   margin-bottom: 2.5rem;
+  opacity: 0;
+  transform: translateY(16px);
+}
+
+.scroll-section {
+  transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+}
+
+.scroll-section.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 h2.section-label {
   margin: 0 0 0.75rem;
+  position: relative;
+  display: inline-block;
   font-family: var(--font-heading);
   font-size: 0.75rem;
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.1em;
   color: var(--ink-300);
+}
+
+.scroll-section.visible h2.section-label::after {
+  content: '';
+  position: absolute;
+  bottom: -0.5rem;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: var(--ink-300);
+  animation: ruleDraw 0.5s ease forwards -0.2s;
+}
+
+@keyframes ruleDraw {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
 }
 
 .content-body,
@@ -126,7 +270,6 @@ h2.section-label {
 .date {
   font-size: 0.9rem;
   color: var(--ink-300);
-  text-align: right;
 }
 
 /* Academic project */
@@ -166,10 +309,18 @@ h2.section-label {
 
 .skills-group {
   margin-bottom: 1rem;
+  transition: transform 0.2s ease;
 }
 
 .skills-group:last-child {
   margin-bottom: 0;
+}
+
+.skills-group:hover {
+  transform: translateX(4px);
+  background-color: var(--ink-800);
+  padding: 0.5rem 0.75rem;
+  border-radius: 4px;
 }
 
 .skills-group h3.skill-category {
@@ -182,7 +333,7 @@ h2.section-label {
   color: var(--ink-300);
 }
 
-.skill-category + + p {
+.skill-category + p {
   margin: 0;
 }
 
@@ -202,10 +353,11 @@ h2.section-label {
   text-decoration: underline;
   text-decoration-color: var(--ink-500);
   text-underline-offset: 2px;
-  transition: text-decoration-width 0.15s ease;
+  transition: text-decoration-width 0.2s ease;
 }
 
-.download-link:hover {
+.download-link:hover,
+.download-link:focus {
   text-decoration-thickness: 2px;
   color: var(--ink-100);
 }
@@ -229,6 +381,14 @@ h2.section-label {
   body {
     background-color: white;
     color: black;
+  }
+
+  .sticky-aside,
+  .reading-progress-bar,
+  .header-name::after,
+  .contact-link,
+  .nav-button {
+    display: none;
   }
 
   .resume {
@@ -359,5 +519,9 @@ h2.section-label {
 
   .project-name {
     font-size: 1.25rem;
+  }
+
+  .sticky-aside {
+    flex-direction: row;
   }
 }

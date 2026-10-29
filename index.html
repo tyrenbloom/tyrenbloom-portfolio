@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Tyrone Jash N. Schofield — BS Computer Science student seeking Systems Analyst or Junior Developer internship. Resume and portfolio.">
+  <meta name="description" content="Tyrone Jash N. Schofield — BS Computer Science student seeking Junior Developer internship. Resume and portfolio.">
   <title>Tyrone Jash N. Schofield — Resume and Portfolio</title>
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cpath fill='%239BABAB' d='M10 8h12v2H10zm0 4h12v2H10zm0 4h8v2h-8z'/%3E%3C/svg%3E">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -12,9 +12,21 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+  <div class="reading-progress-bar"></div>
+
+  <nav class="sticky-aside" aria-label="Section navigation">
+    <button class="nav-button" data-section="objective">About</button>
+    <button class="nav-button" data-section="education">Education</button>
+    <button class="nav-button" data-section="project">Project</button>
+    <button class="nav-button" data-section="skills">Skills</button>
+    <button class="nav-button" data-section="contact">Contact</button>
+  </nav>
+
   <article class="resume">
     <header class="resume-header">
-      <h1 class="header-name">Tyrone Jash N. Schofield</h1>
+      <h1 class="header-name">
+        <span class="name-text">Tyrone Jash N. Schofield</span>
+      </h1>
       <div class="header-contact">
         <a href="mailto:asheld113@gmail.com" class="contact-link">asheld113@gmail.com</a>
         <span class="contact-divider">·</span>
@@ -24,7 +36,7 @@
       </div>
     </header>
 
-    <section class="career-objective" aria-labelledby="objective-heading">
+    <section class="career-objective scroll-section" id="objective" aria-labelledby="objective-heading">
       <h2 class="section-label" id="objective-heading">CAREER OBJECTIVE</h2>
       <div class="content-body">
         <p>BS Computer Science student seeking a Junior Developer internship. Experienced in requirements analysis, system design documentation, and acting as analyst on a client-based thesis project.</p>
@@ -33,7 +45,7 @@
 
     <hr class="section-divider">
 
-    <section class="education" aria-labelledby="education-heading">
+    <section class="education scroll-section" id="education" aria-labelledby="education-heading">
       <h2 class="section-label" id="education-heading">EDUCATION</h2>
       <div class="content-body">
         <p><span class="course">Bachelor of Science in Computer Science</span></p>
@@ -44,7 +56,7 @@
 
     <hr class="section-divider">
 
-    <section class="academic-project" aria-labelledby="project-heading">
+    <section class="academic-project scroll-section" id="project" aria-labelledby="project-heading">
       <h2 class="section-label" id="project-heading">ACADEMIC PROJECT</h2>
       <div class="content-body">
         <h3 class="project-name">AuGGREGATES CRM</h3>
@@ -56,7 +68,7 @@
 
     <hr class="section-divider">
 
-    <section class="technical-skills" aria-labelledby="skills-heading">
+    <section class="technical-skills scroll-section" id="skills" aria-labelledby="skills-heading">
       <h2 class="section-label" id="skills-heading">TECHNICAL SKILLS</h2>
       <div class="skills-content">
         <div class="skills-group">
@@ -84,7 +96,7 @@
 
     <hr class="section-divider">
 
-    <section class="trainings" aria-labelledby="trainings-heading">
+    <section class="trainings scroll-section" id="contact" aria-labelledby="trainings-heading">
       <h2 class="section-label" id="trainings-heading">TRAININGS AND AFFILIATIONS</h2>
       <div class="content-body">
         <p>Java Fundamentals Training</p>
@@ -96,5 +108,7 @@
       <p><a href="resume.pdf" class="download-link">Download resume (PDF) &nearr;</a></p>
     </footer>
   </article>
+
+  <script src="script.js" defer></script>
 </body>
 </html>
