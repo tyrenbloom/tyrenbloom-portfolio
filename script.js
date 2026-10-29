@@ -271,10 +271,6 @@
         });
       }, index * 120);
     });
-
-    // Clean up original text node
-    const originalNode = nameText;
-    originalNode.textContent = '';
   }
 
   // --- Focus management for accessibility ---
