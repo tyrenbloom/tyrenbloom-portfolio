@@ -91,9 +91,8 @@ body::before {
 /* Marquee */
 .marquee {
   position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  top: 1.5rem;
+  right: 1.5rem;
   padding: 0.5rem 1rem;
   border-radius: 99px;
   background: var(--ink-800);
@@ -101,6 +100,12 @@ body::before {
   z-index: 2;
   overflow: hidden;
   opacity: 0.9;
+  transform: translateX(150%);
+  transition: transform 0.5s ease;
+}
+
+.marquee.show {
+  transform: translateX(0);
 }
 
 .marquee-content {

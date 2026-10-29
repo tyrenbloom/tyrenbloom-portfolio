@@ -310,6 +310,30 @@
             top: top,
             behavior: 'smooth'
           });
+
+          targetSection.setAttribute('tabindex', '-1');
+          targetSection.focus({
+            preventScroll: true
+          });
+        }
+      });
+    }
+  });
+
+  // --- Show marquee after page loads ---
+  const marquee = document.querySelector('.marquee');
+  if (marquee) {
+    setTimeout(() => {
+      marquee.classList.add('show');
+    }, 1000);
+  }
+
+  // --- Focus management for accessibility ---
+          const top = targetSection.offsetTop - 80;
+          window.scrollTo({
+            top: top,
+            behavior: 'smooth'
+          });
         }
       });
     }
