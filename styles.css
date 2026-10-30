@@ -216,7 +216,7 @@ body {
   display: flex;
   flex-direction: column;
   border-bottom: 1px solid var(--line);
-  padding: 1rem 1.5rem;
+  padding: 1.25rem 1.5rem;
 }
 
 .fact-item:last-child {
@@ -308,7 +308,7 @@ body {
 .skills-content {
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  gap: 3rem;
   padding-top: 1rem;
 }
 
@@ -373,10 +373,18 @@ body {
 }
 
 .footer-email {
-  margin: 0;
+  margin: 0.75rem 0 0.5rem;
   font-family: 'IBM Plex Mono', monospace;
   font-size: 14px;
   color: var(--text-soft);
+}
+
+.footer-tagline {
+  margin: 0.5rem 0 1rem;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 13px;
+  color: var(--text-soft);
+  opacity: 0.8;
 }
 
 .copy-btn {
