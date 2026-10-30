@@ -3,26 +3,135 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Tyrone Jash N. Schofield — BS Computer Science student seeking Junior Developer internship. Resume and portfolio.">
-  <title>Tyrone Jash N. Schofield — Resume and Portfolio</title>
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cpath fill='%239BABAB' d='M10 8h12v2H10zm0 4h12v2H10zm0 4h8v2h-8z'/%3E%3C/svg%3E">
+  <meta name="description" content="Tyrone Jash N. Schofield — Full-Stack Developer seeking Junior Developer internship">
+  <title>Tyrone Schofield — Full-Stack Developer Portfolio</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cpath fill='%23D9B26F' d='M10 8h12v2H10zm0 4h12v2H10zm0 4h8v2h-8z'/%3E%3C/svg%3E">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:wght@400;700&family=Lora:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Serif:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <div class="reading-progress-bar"></div>
+  <div class="background-fx"></div>
 
-  <nav class="sticky-aside" aria-label="Section navigation">
-    <button class="nav-button" data-section="objective">About</button>
-    <button class="nav-button" data-section="education">Education</button>
-    <button class="nav-button" data-section="project">Project</button>
-    <button class="nav-button" data-section="skills">Skills</button>
-    <button class="nav-button" data-section="contact">Contact</button>
+  <header class="status-bar">
+    <div class="status-left">
+      <span class="availability-dot"></span>
+      <span class="status-text">Available for internship</span>
+    </div>
+    <div class="status-right">
+      <span class="status-location">Marilao, PH / </span>
+      <span class="status-clock" aria-live="polite">Loading...</span>
+    </div>
+  </header>
+
+  <nav class="side-nav" aria-label="Section navigation">
+    <span class="nav-label">SECTIONS</span>
+    <a href="#objective" class="nav-link">About</a>
+    <a href="#education" class="nav-link">Education</a>
+    <a href="#project" class="nav-link">Project</a>
+    <a href="#skills" class="nav-link">Skills</a>
+    <a href="#contact" class="nav-link">Contact</a>
   </nav>
 
-  <article class="resume">
+  <main>
+    <section class="hero">
+      <h1 class="hero-name">
+        <span class="name-line">Tyrone Jash N.</span>
+        <span class="name-line">Schofield</span>
+      </h1>
+      <p class="hero-title">Full-Stack Developer</p>
+    </section>
+
+    <section class="facts" aria-label="Facts">
+      <div class="facts-grid">
+        <div class="fact-item">
+          <span class="fact-label">ROLE</span>
+          <p class="fact-value">Developer</p>
+        </div>
+        <div class="fact-item">
+          <span class="fact-label">BASE</span>
+          <p class="fact-value">Marilao, Bulacan</p>
+        </div>
+        <div class="fact-item">
+          <span class="fact-label">STACK</span>
+          <p class="fact-value">C#, Java, Python, SQL</p>
+        </div>
+        <div class="fact-item">
+          <span class="fact-label">LOOKING FOR</span>
+          <p class="fact-value">Junior developer internship</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section objective" id="objective">
+      <span class="section-label">01 / Career objective</span>
+      <div class="content">
+        <p class="description">BS Computer Science student seeking a Junior Developer internship. Experienced in requirements analysis, system design documentation, and acting as analyst on a client-based thesis project.</p>
+      </div>
+    </section>
+
+    <section class="section project" id="project">
+      <span class="section-label">02 / Academic project</span>
+      <span class="project-number">CH 01</span>
+      <div class="project-content">
+        <h3 class="project-title">AuGGREGATES CRM</h3>
+        <p class="project-subtitle">Web-based expense, quotation, and AI-assistant system</p>
+        <p class="project-meta"><span class="mono">System analyst / Team of 4 / 2025 to 2026</span></p>
+        <p class="project-description">Designed the system requirements and documentation for a client-based thesis serving a real business. Implemented expense tracking, quotation management, and an AI-assisted interface for IGME Golden Embankment Supply operations.</p>
+      </div>
+    </section>
+
+    <section class="section education" id="education">
+      <span class="section-label">03 / Education</span>
+      <div class="content">
+        <p><span class="course">Bachelor of Science in Computer Science</span></p>
+        <p class="degree">STI College San Jose del Monte</p>
+        <p class="date">2023 — 2027</p>
+      </div>
+    </section>
+
+    <section class="section skills" id="skills">
+      <span class="section-label">04 / Technical skills</span>
+      <div class="skills-content">
+        <div class="skills-group">
+          <p class="skill-category">Programming Languages</p>
+          <p>C#, Java, Python, HTML, CSS</p>
+        </div>
+        <div class="skills-group">
+          <p class="skill-category">Database</p>
+          <p>SQL, basic database design and management</p>
+        </div>
+        <div class="skills-group">
+          <p class="skill-category">Software and Tools</p>
+          <p>Visual Studio, Microsoft Office, Figma, Git and GitHub</p>
+        </div>
+        <div class="skills-group">
+          <p class="skill-category">Technical</p>
+          <p>System analysis, web development, UI design, Windows troubleshooting, computer hardware troubleshooting, basic cybersecurity concepts</p>
+        </div>
+        <div class="skills-group">
+          <p class="skill-category">Other</p>
+          <p>Computer troubleshooting, video editing</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section contact" id="contact">
+      <span class="section-label">05 / Training and affiliations</span>
+      <div class="content">
+        <p>Java Fundamentals Training</p>
+        <p class="date">June 2024</p>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="footer-line"></div>
+      <p class="footer-text">Let's build something</p>
+      <p class="footer-email">asheld113@gmail.com</p>
+      <button class="copy-btn" aria-label="Copy email" type="button">Copy email</button>
+    </footer>
+  </main>
     <header class="resume-header">
       <div class="header-branding">
         <h1 class="header-name">
