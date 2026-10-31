@@ -1,27 +1,6 @@
 (function() {
   'use strict';
 
-  // Real-time Manila clock
-  function updateClock() {
-    const clockElement = document.querySelector('.status-clock');
-    if (!clockElement) return;
-
-    const now = new Date();
-    const options = {
-      timeZone: 'Asia/Manila',
-      hour: '2-digit',
-      minute: '2-digit',
-      second: '2-digit',
-      hour12: false
-    };
-
-    clockElement.textContent = new Intl.DateTimeFormat('en-PH', options).format(now);
-  }
-
-  // Start clock immediately and update every second
-  updateClock();
-  setInterval(updateClock, 1000);
-
   // Intersection Observer for scroll animations
   function initScrollAnimations() {
     const observerOptions = {
@@ -45,7 +24,7 @@
   // Intersection Observer for nav active state
   function initNavActiveState() {
     const navLinks = document.querySelectorAll('.nav-link');
-    const sections = document.querySelectorAll('.section');
+    const sections = document.querySelectorAll('.section, .contact-section');
 
     if (navLinks.length === 0 || sections.length === 0) return;
 
@@ -63,7 +42,6 @@
             link.classList.remove('active');
             if (link.getAttribute('href') === `#${id}`) {
               link.classList.add('active');
-              link.focus({ preventScroll: true });
             }
           });
         }
@@ -92,11 +70,11 @@
     const copyBtn = document.querySelector('.copy-btn');
     if (!copyBtn) return;
 
-    const emailElement = document.querySelector('.footer-email');
+    const emailElement = document.querySelector('.contact-email');
     const originalText = copyBtn.textContent;
 
     copyBtn.addEventListener('click', async () => {
-      const email = emailElement?.textContent.trim();
+      const email = emailElement?.dataset.email;
 
       if (!email) return;
 
@@ -136,16 +114,19 @@
     });
   }
 
-  // Respect prefers-reduced-motion
+  // Dynamic footer year
+  function initFooterYear() {
+    const el = document.getElementById('footer-year');
+    if (el) el.textContent = new Date().getFullYear();
+  }
   function init() {
     const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-    if (!prefersReducedMotion) {
-      initScrollAnimations();
-      initNavActiveState();
-    }
+    if (!prefersReducedMotion) initScrollAnimations();
+    initNavActiveState();
 
     initCopyEmail();
+    initFooterYear();
   }
 
   // Initialize when DOM is ready
