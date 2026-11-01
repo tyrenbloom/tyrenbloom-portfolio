@@ -610,6 +610,73 @@ a:focus-visible, button:focus-visible {
   line-height: 1.75;
 }
 
+/* ============================================
+   3D HOVER EFFECTS
+   ============================================ */
+
+.project-card {
+  transition: transform 0.5s ease;
+  transform-style: preserve-3d;
+}
+
+.project-visual {
+  transition: transform 0.5s ease;
+  transform-style: preserve-3d;
+}
+
+.project-details {
+  transition: transform 0.5s ease;
+}
+
+.skill-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.skill-card:hover {
+  border-color: var(--aqua);
+  box-shadow: 0 8px 32px rgba(116, 255, 237, 0.15);
+  transform: translateY(-4px);
+}
+
+/* ============================================
+   MAGNETIC NAV
+   ============================================ */
+
+.nav-link {
+  transition: transform 0.3s ease, color 180ms ease;
+  position: relative;
+}
+
+/* ============================================
+   PARTICLES
+   ============================================ */
+
+.particles-container {
+  pointer-events: none;
+}
+
+.particles-container span {
+  position: absolute;
+  border-radius: 50%;
+}
+
+/* ============================================
+   TYPEWRITER EFFECT
+   ============================================ */
+
+.hero h1 span {
+  display: inline-block;
+}
+
+/* ============================================
+   COPY BUTTON
+   ============================================ */
+
+.copy-btn.copied {
+  background: var(--aqua) !important;
+  color: var(--paper) !important;
+}
+
 .contact-section {
   position: relative;
   overflow: hidden;
@@ -1120,9 +1187,145 @@ a:focus-visible, button:focus-visible {
   border: 1px solid var(--line);
   border-radius: 999px;
   transition: color 180ms ease, border-color 180ms ease;
+
+@media (max-width: 640px) {
+  .contact-side {
+    align-items: stretch;
+  }
+}
+
 }
 
 .contact-socials a:hover {
+
+/* ---- New animations ---- */
+.scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: var(--aqua);
+  transform: scaleX(0);
+  transform-origin: left center;
+  z-index: 30;
+  pointer-events: none;
+}
+
+.preloader {
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--paper);
+  pointer-events: none;
+  transition: opacity 0.6s ease, visibility 0.6s ease;
+  animation: preloaderFade 0.6s ease 2s forwards;
+}
+
+.preloader.is-hidden {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.preloader-mark {
+  font-size: clamp(40px, 8vw, 72px);
+  font-weight: 700;
+  letter-spacing: -0.05em;
+  color: var(--ink);
+}
+
+.preloader-mark span {
+  color: var(--pink);
+}
+
+.cursor-dot {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 10px;
+  height: 10px;
+  margin: -5px 0 0 -5px;
+  border-radius: 50%;
+  background: var(--aqua);
+  pointer-events: none;
+  z-index: 40;
+  opacity: 0;
+  transition: opacity 0.2s ease, transform 0.15s ease;
+  mix-blend-mode: difference;
+}
+
+.cursor-dot.is-active {
+  opacity: 1;
+}
+
+.cursor-dot.cursor-hover {
+  scale: 2.5;
+  background: var(--pink);
+}
+
+@media (hover: none), (pointer: coarse) {
+  .cursor-dot { display: none; }
+}
+
+/* Skill card hover glow */
+.skill-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.skill-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(400px circle at var(--mx, 50%) var(--my, 50%), rgb(116 255 237 / 12%), transparent 40%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+.skill-card:hover::before {
+  opacity: 1;
+}
+
+/* Button ripple */
+.button, .copy-btn, .contact-socials a {
+  position: relative;
+  overflow: hidden;
+}
+
+.ripple {
+
+@keyframes preloaderFade {
+  to { opacity: 0; visibility: hidden; }
+}
+
+  position: absolute;
+  border-radius: 50%;
+  background: rgb(255 255 255 / 25%);
+  transform: scale(0);
+  animation: ripple 0.6s linear;
+  pointer-events: none;
+}
+
+@keyframes ripple {
+  to { transform: scale(4); opacity: 0; }
+}
+
+/* Typewriter caret for eyebrow */
+.eyebrow.typing::after {
+  content: '|';
+  margin-left: 4px;
+  color: var(--aqua);
+  animation: blink 0.8s steps(1) infinite;
+}
+
+@keyframes blink {
+  50% { opacity: 0; }
+}
+
   color: var(--aqua);
   border-color: var(--aqua);
 }
