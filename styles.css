@@ -1353,3 +1353,125 @@ a:focus-visible, button:focus-visible {
   color: var(--aqua);
 }
 
+
+/* Showcase projects section */
+.showcase-number {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.section-heading h2 {
+  font-size: clamp(1.75rem, 3vw, 2rem);
+  font-family: var(--font-mono);
+  display: inline;
+  font-weight: 600;
+  color: var(--ink);
+  margin: 0;
+}
+
+.showcase-grid {
+  display: grid;
+  gap: clamp(1.5rem, 2vw + 0.75rem, 2rem);
+  margin-top: clamp(1.5rem, 2vw, 1.75rem);
+}
+
+.showcase-card {
+  display: grid;
+  grid-template-columns: clamp(260px, 0.8fr, 320px) 1fr;
+  gap: clamp(1.75rem, 3vw, 2.5rem);
+  padding: clamp(1.5rem, 2vw, 1.75rem) clamp(1.5rem, 2vw, 2rem);
+  border: 1px solid var(--line);
+  position: relative;
+  transition: border-color 180ms ease;
+}
+
+.showcase-card:hover {
+  border-color: var(--aqua);
+}
+
+.showcase-card__visual {
+  aspect-ratio: 16/9;
+  background: linear-gradient(135deg, var(--surface) 0%, #2a3a6b 100%);
+  border-radius: 8px;
+  overflow: hidden;
+  position: relative;
+}
+
+.showcase-artwork {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.9;
+}
+
+.showcase-card__details {
+  display: grid;
+  gap: clamp(0.75rem, 1.5vw, 1rem);
+}
+
+.showcase-card__kicker {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--aqua);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin: 0;
+}
+
+.showcase-card h3 {
+  font-size: clamp(1.6rem, 2.5vw, 2rem);
+  font-family: var(--font-body);
+  font-weight: 700;
+  margin: 0;
+  line-height: 1.3;
+}
+
+.showcase-card__subtitle {
+  font-size: clamp(0.95rem, 1.75vw, 1.25rem);
+  color: var(--ink-soft);
+  margin: 0 0 clamp(1rem, 2vw, 1.25rem);
+  line-height: 1.6;
+}
+
+.showcase-card__stack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: clamp(0.5rem, 1vw, 0.75rem);
+  font-size: clamp(0.75rem, 1.2vw, 0.85rem);
+  color: var(--muted);
+}
+
+.showcase-card__stack span {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.showcase-card__stack span b {
+  color: var(--ink);
+  font-weight: 500;
+}
+
+.showcase-card__preview {
+  margin-top: auto;
+  padding-top: clamp(1rem, 2vw, 1.25rem);
+  border-top: 1px solid var(--line);
+  max-width: fit-content;
+}
+
+.showcase-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 600;
+  font-size: clamp(0.9rem, 1.5vw, 1rem);
+  color: var(--aqua);
+  text-decoration: none;
+  transition: gap 180ms ease;
+}
+
+.showcase-link:hover {
+  gap: 12px;
+}
