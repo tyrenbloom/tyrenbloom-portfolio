@@ -24,13 +24,29 @@ html {
 
 body {
   margin: 0;
-  background: var(--paper);
+  background: #06141b;
   color: var(--ink);
   font-family: var(--font-body);
   font-size: 16px;
   line-height: 1.65;
   -webkit-font-smoothing: antialiased;
   overflow-x: hidden;
+}
+
+.moonlit-petals-canvas {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.site-header,
+main,
+.site-footer {
+  position: relative;
+  z-index: 1;
 }
 
 a {
@@ -58,13 +74,21 @@ a:focus-visible, button:focus-visible {
   left: 0.75rem;
   padding: 0.65rem 1rem;
   transform: translateY(-160%);
+  clip-path: inset(50%);
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
   background: var(--aqua);
   color: var(--ink);
   font-weight: 700;
 }
 
-.skip-link:focus {
+.skip-link:focus-visible {
   transform: translateY(0);
+  clip-path: inset(0);
+  visibility: visible;
+  opacity: 1;
+  pointer-events: auto;
 }
 
 .site-header {
@@ -1187,6 +1211,7 @@ a:focus-visible, button:focus-visible {
   border: 1px solid var(--line);
   border-radius: 999px;
   transition: color 180ms ease, border-color 180ms ease;
+}
 
 @media (max-width: 640px) {
   .contact-side {
@@ -1194,9 +1219,9 @@ a:focus-visible, button:focus-visible {
   }
 }
 
-}
-
 .contact-socials a:hover {
+  color: var(--pink);
+}
 
 /* ---- New animations ---- */
 .scroll-progress {

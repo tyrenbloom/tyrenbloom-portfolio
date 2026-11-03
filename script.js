@@ -1,6 +1,20 @@
 (function() {
   'use strict';
 
+  if ('scrollRestoration' in history) {
+    history.scrollRestoration = 'manual';
+  }
+
+  if (!window.location.hash) {
+    window.scrollTo(0, 0);
+  }
+
+  window.addEventListener('pageshow', () => {
+    if (!window.location.hash) {
+      window.scrollTo(0, 0);
+    }
+  });
+
   // ============================================
   // GSAP ANIMATION SETUP
   // ============================================

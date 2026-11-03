@@ -44,138 +44,46 @@
 
         <main id="main" class="main">
             <div class="content">
-                <!-- Top band with player identity and most played game -->
+                <!-- Steam data summary -->
                 <section aria-labelledby="player-heading">
                     <div class="player-identity">
-                        <div class="player-identity__avatar" aria-hidden="true">VR</div>
                         <div class="player-identity__info">
-                            <div class="player-identity__big-number">0</div>
+                            <div class="player-identity__big-number">4,874.8</div>
                             <div class="player-identity__big-label">Hours Played</div>
                             <div class="player-identity__stats-row">
-                                <span class="player-identity__stat-item">0 games</span>
-                                <span class="player-identity__stat-item">0 achievements</span>
-                                <span class="player-identity__stat-item">0% complete</span>
+                                <span class="player-identity__stat-item">2 games</span>
+                                <span class="player-identity__stat-item">39/40 known</span>
+                                <span class="player-identity__stat-item">97.5% known</span>
                             </div>
                         </div>
                     </div>
-                    <!-- Add your most played game banner here -->
+                    <div class="most-played-banner">
+                        <img src="https://cdn.cloudflare.steamstatic.com/steam/apps/1203220/header.jpg" alt="NARAKA: BLADEPOINT game cover" class="most-played-banner__image" width="460" height="215" loading="eager">
+                        <div class="most-played-banner__content">
+                            <h2 class="most-played-banner__title">NARAKA: BLADEPOINT</h2>
+                            <div class="most-played-banner__hours">4,140.5 Hours</div>
+                            <div class="most-played-banner__hours">Last played Nov 2</div>
+                        </div>
+                    </div>
                 </section>
 
-                <!-- Top played games list -->
+                <!-- Top played games -->
                 <section aria-labelledby="games-heading">
                     <h2 id="games-heading">Top Played Games</h2>
                     <ol class="ranked-list">
                         <li class="ranked-list__item">
                             <span class="ranked-list__rank">01</span>
-                            <img
-                                src="https://cdn.cloudflare.steamstatic.com/steam/apps/105600/header.jpg"
-                                alt="Terraria game cover"
-                                class="ranked-list__thumbnail"
-                                width="460"
-                                height="215"
-                                loading="lazy"
-                            >
-                            <span class="ranked-list__title">Terraria</span>
-                            <span class="ranked-list__hours">286h</span>
+                            <img src="https://cdn.cloudflare.steamstatic.com/steam/apps/1203220/header.jpg" alt="NARAKA: BLADEPOINT game cover" class="ranked-list__thumbnail" width="460" height="215" loading="lazy">
+                            <span class="ranked-list__title">NARAKA: BLADEPOINT</span>
+                            <span class="ranked-list__hours">4,140.5h · Nov 2</span>
                             <span class="ranked-list__bar ranked-list__bar--active"></span>
                         </li>
                         <li class="ranked-list__item">
                             <span class="ranked-list__rank">02</span>
-                            <img
-                                src="https://cdn.cloudflare.steamstatic.com/steam/apps/1245620/header.jpg"
-                                alt="Elden Ring game cover"
-                                class="ranked-list__thumbnail"
-                                width="460"
-                                height="215"
-                                loading="lazy"
-                            >
-                            <span class="ranked-list__title">Elden Ring</span>
-                            <span class="ranked-list__hours">214h</span>
-                            <span class="ranked-list__bar" style="width: 75%;"></span>
-                        </li>
-                        <li class="ranked-list__item">
-                            <span class="ranked-list__rank">03</span>
-                            <img
-                                src="https://cdn.cloudflare.steamstatic.com/steam/apps/1086940/header.jpg"
-                                alt="Baldur's Gate 3 game cover"
-                                class="ranked-list__thumbnail"
-                                width="460"
-                                height="215"
-                                loading="lazy"
-                            >
-                            <span class="ranked-list__title">Baldur's Gate 3</span>
-                            <span class="ranked-list__hours">187h</span>
-                            <span class="ranked-list__bar" style="width: 65.7%;"></span>
-                        </li>
-                        <li class="ranked-list__item">
-                            <span class="ranked-list__rank">04</span>
-                            <img
-                                src="https://cdn.cloudflare.steamstatic.com/steam/apps/367520/header.jpg"
-                                alt="Hollow Knight game cover"
-                                class="ranked-list__thumbnail"
-                                width="460"
-                                height="215"
-                                loading="lazy"
-                            >
-                            <span class="ranked-list__title">Hollow Knight</span>
-                            <span class="ranked-list__hours">142h</span>
-                            <span class="ranked-list__bar" style="width: 49.8%;"></span>
-                        </li>
-                        <li class="ranked-list__item">
-                            <span class="ranked-list__rank">05</span>
-                            <img
-                                src="https://cdn.cloudflare.steamstatic.com/steam/apps/413150/header.jpg"
-                                alt="Stardew Valley game cover"
-                                class="ranked-list__thumbnail"
-                                width="460"
-                                height="215"
-                                loading="lazy"
-                            >
-                            <span class="ranked-list__title">Stardew Valley</span>
-                            <span class="ranked-list__hours">128h</span>
-                            <span class="ranked-list__bar" style="width: 44.8%;"></span>
-                        </li>
-                        <li class="ranked-list__item">
-                            <span class="ranked-list__rank">06</span>
-                            <img
-                                src="https://cdn.cloudflare.steamstatic.com/steam/apps/292030/header.jpg"
-                                alt="The Witcher 3 game cover"
-                                class="ranked-list__thumbnail"
-                                width="460"
-                                height="215"
-                                loading="lazy"
-                            >
-                            <span class="ranked-list__title">The Witcher 3</span>
-                            <span class="ranked-list__hours">96h</span>
-                            <span class="ranked-list__bar" style="width: 33.7%;"></span>
-                        </li>
-                        <li class="ranked-list__item">
-                            <span class="ranked-list__rank">07</span>
-                            <img
-                                src="https://cdn.cloudflare.steamstatic.com/steam/apps/1145360/header.jpg"
-                                alt="Hades game cover"
-                                class="ranked-list__thumbnail"
-                                width="460"
-                                height="215"
-                                loading="lazy"
-                            >
-                            <span class="ranked-list__title">Hades</span>
-                            <span class="ranked-list__hours">74h</span>
-                            <span class="ranked-list__bar" style="width: 25.9%;"></span>
-                        </li>
-                        <li class="ranked-list__item">
-                            <span class="ranked-list__rank">08</span>
-                            <img
-                                src="https://cdn.cloudflare.steamstatic.com/steam/apps/1091500/header.jpg"
-                                alt="Cyberpunk 2077 game cover"
-                                class="ranked-list__thumbnail"
-                                width="460"
-                                height="215"
-                                loading="lazy"
-                            >
-                            <span class="ranked-list__title">Cyberpunk 2077</span>
-                            <span class="ranked-list__hours">58h</span>
-                            <span class="ranked-list__bar" style="width: 20.3%;"></span>
+                            <img src="https://cdn.cloudflare.steamstatic.com/steam/apps/1422450/header.jpg" alt="Deadlock game cover" class="ranked-list__thumbnail" width="460" height="215" loading="lazy">
+                            <span class="ranked-list__title">Deadlock</span>
+                            <span class="ranked-list__hours">734.3h · Yesterday</span>
+                            <span class="ranked-list__bar" style="width: 17.7%;"></span>
                         </li>
                     </ol>
                 </section>
@@ -184,10 +92,20 @@
                 <section aria-labelledby="achievements-heading">
                     <h2 id="achievements-heading">Achievement Overview</h2>
                     <div class="achievement-section">
-                        <div class="achievement-section__ring" role="img" aria-label="Overall percentage of achievements unlocked: 0%">
+                        <div class="achievement-section__ring achievement-section__ring--known" role="img" aria-label="Known achievements: 39 of 40 unlocked, 97.5%">
                         </div>
                         <div class="achievement-section__list">
-                            <!-- Add your games here. Duplicate an achievement-list__item block per game. -->
+                            <article class="achievement-list__item">
+                                <span class="achievement-list__progress">39 of 40</span>
+                                <span class="achievement-list__game-title">NARAKA: BLADEPOINT</span>
+                                <progress max="40" value="39" aria-label="NARAKA: BLADEPOINT achievements: 39 unlocked out of 40"></progress>
+                                <a href="https://steamcommunity.com/profiles/76561198334430826/achievements/1203220" target="_blank" rel="noopener noreferrer">View achievements</a>
+                            </article>
+                            <article class="achievement-list__item">
+                                <span class="achievement-list__progress">—</span>
+                                <span class="achievement-list__game-title">Deadlock</span>
+                                <span class="achievement-list__game-title">Achievement data not provided</span>
+                            </article>
                         </div>
                     </div>
                 </section>

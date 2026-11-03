@@ -266,6 +266,14 @@
     color: var(--text);
 }
 
+.achievement-section__ring--known {
+    background: conic-gradient(var(--accent) 0deg 351deg, var(--surface-2) 351deg 360deg);
+}
+
+.achievement-section__ring--known::after {
+    content: '97.5%';
+}
+
 .achievement-section__list {
     display: grid;
     gap: clamp(1rem, 1.5vw, 1.25rem);
