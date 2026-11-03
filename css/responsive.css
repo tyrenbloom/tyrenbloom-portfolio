@@ -162,3 +162,35 @@ body {
     padding-left: clamp(0.75rem, 1.2vw, 1.5rem);
     padding-right: clamp(0.75rem, 1.2vw, 1.5rem);
 }
+
+/* achievements responsive */
+.content {
+    display: flow-root;
+}
+
+/* achievements responsive */
+# Achievements page specific responsive layout
+
+.achievements__main-grid {
+    grid-template-columns: 1fr;
+    gap: clamp(2rem, 4vw, 3rem);
+}
+
+.achievements__timeline-content {
+    flex-wrap: wrap;
+    gap: clamp(0.5rem, 1vw, 0.875rem);
+}
+
+.achievements__timeline-item time {
+    width: 100%;
+    padding-left: 0;
+    margin-bottom: clamp(0.3rem, 0.5vw, 0.5rem);
+}
+
+.achievements__rarity, .achievements__achievement-name {
+    width: 100%;
+}
+
+.achievements__rarest-list {
+    grid-template-columns: 1fr;
+}
