@@ -672,19 +672,6 @@ a:focus-visible, button:focus-visible {
 }
 
 /* ============================================
-   PARTICLES
-   ============================================ */
-
-.particles-container {
-  pointer-events: none;
-}
-
-.particles-container span {
-  position: absolute;
-  border-radius: 50%;
-}
-
-/* ============================================
    TYPEWRITER EFFECT
    ============================================ */
 
@@ -1237,35 +1224,6 @@ a:focus-visible, button:focus-visible {
   pointer-events: none;
 }
 
-.preloader {
-  position: fixed;
-  inset: 0;
-  z-index: 50;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: var(--paper);
-  pointer-events: none;
-  transition: opacity 0.6s ease, visibility 0.6s ease;
-  animation: preloaderFade 0.6s ease 2s forwards;
-}
-
-.preloader.is-hidden {
-  opacity: 0;
-  visibility: hidden;
-}
-
-.preloader-mark {
-  font-size: clamp(40px, 8vw, 72px);
-  font-weight: 700;
-  letter-spacing: -0.05em;
-  color: var(--ink);
-}
-
-.preloader-mark span {
-  color: var(--pink);
-}
-
 .cursor-dot {
   position: fixed;
   top: 0;
@@ -1322,10 +1280,6 @@ a:focus-visible, button:focus-visible {
 }
 
 .ripple {
-
-@keyframes preloaderFade {
-  to { opacity: 0; visibility: hidden; }
-}
 
   position: absolute;
   border-radius: 50%;

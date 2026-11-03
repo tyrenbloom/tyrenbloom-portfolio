@@ -32,9 +32,6 @@
   let particles = [];
   let width = 0;
   let height = 0;
-  let animationFrame = 0;
-  let lastTime = 0;
-  let isVisible = !document.hidden;
   let blossoms = [];
 
   function createRandom(seed) {
@@ -178,44 +175,6 @@
     });
   }
 
-  function update(delta, time) {
-    particles.forEach(function (particle) {
-      particle.y += particle.speed * delta * 0.001;
-      particle.rotation += particle.rotationSpeed * delta;
-      if (particle.y > height + 12) {
-        particle.y = -12;
-        particle.x = random() * width;
-      }
-      drawPetal(particle, time);
-    });
-  }
-
-  function animate(time) {
-    if (!isVisible || reducedMotion) return;
-    const delta = Math.min(time - lastTime, 50);
-    lastTime = time;
-    drawBackground();
-    drawVignette();
-    drawBlossomCluster();
-    update(delta, time);
-    animationFrame = window.requestAnimationFrame(animate);
-  }
-
-  function handleVisibilityChange() {
-    isVisible = !document.hidden;
-    if (isVisible && !reducedMotion) {
-      lastTime = performance.now();
-      window.cancelAnimationFrame(animationFrame);
-      animationFrame = window.requestAnimationFrame(animate);
-    } else {
-      window.cancelAnimationFrame(animationFrame);
-    }
-  }
-
   window.addEventListener('resize', resize, { passive: true });
-  document.addEventListener('visibilitychange', handleVisibilityChange);
   resize();
-  if (!reducedMotion) {
-    animationFrame = window.requestAnimationFrame(animate);
-  }
 })();

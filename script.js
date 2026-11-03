@@ -28,75 +28,6 @@
   // ============================================
   // 1. PARTICLE NETWORK BACKGROUND
   // ============================================
-  function initParticles() {
-    if (prefersReducedMotion) return;
-
-    const hero = document.querySelector('.hero');
-    if (!hero) return;
-
-    const particleCount = window.innerWidth < 768 ? 40 : 70;
-    const particlesContainer = document.createElement('div');
-    particlesContainer.className = 'particles-container';
-    particlesContainer.style.cssText = `
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      overflow: hidden;
-      pointer-events: none;
-      z-index: 0;
-    `;
-
-    hero.querySelector('.hero-art').prepend(particlesContainer);
-
-    // Create particles
-    for (let i = 0; i < particleCount; i++) {
-      const particle = document.createElement('span');
-      const size = Math.random() * 4 + 1;
-      const x = Math.random() * 100;
-      const y = Math.random() * 100;
-      const duration = Math.random() * 20 + 30;
-      const delay = Math.random() * 5;
-
-      particle.style.cssText = `
-        position: absolute;
-        width: ${size}px;
-        height: ${size}px;
-        background: rgba(116, 255, 237, ${Math.random() * 0.5 + 0.1});
-        border-radius: 50%;
-        left: ${x}%;
-        top: ${y}%;
-        opacity: 0;
-      `;
-
-      particlesContainer.appendChild(particle);
-
-      // Animate particle in
-      gsap.to(particle, {
-        opacity: Math.random() * 0.6 + 0.2,
-        scale: Math.random() * 1.5 + 0.5,
-        duration: duration,
-        delay: delay,
-        repeat: -1,
-        yoyo: true,
-        ease: 'sine.inOut'
-      });
-
-      // Float particles
-      gsap.to(particle, {
-        x: 'random(-50, 50)%',
-        y: 'random(-50, 50)%',
-        rotation: 'random(-180, 180)',
-        duration: duration * 0.5,
-        repeat: -1,
-        yoyo: true,
-        ease: 'sine.inOut',
-        delay: delay
-      });
-    }
-  }
-
   // ============================================
   // 2. HERO TEXT REVEAL ANIMATION
   // ============================================
@@ -562,23 +493,13 @@
   // CURSOR FOLLOWER (desktop)
   // ============================================
   function initCursorFollower() {
-    if (prefersReducedMotion) return;
-    if (!window.matchMedia('(hover: hover) and (pointer: fine)').matches) return;
     const dot = document.getElementById('cursor-dot');
-    if (!dot) return;
-    let tx = 0, ty = 0, x = 0, y = 0;
+    if (!dot || prefersReducedMotion || !window.matchMedia('(hover: hover) and (pointer: fine)').matches) return;
     window.addEventListener('mousemove', (e) => {
-      tx = e.clientX; ty = e.clientY;
+      dot.style.transform = 'translate(' + e.clientX + 'px,' + e.clientY + 'px)';
       dot.classList.add('is-active');
-    });
+    }, { passive: true });
     window.addEventListener('mouseleave', () => dot.classList.remove('is-active'));
-    const render = () => {
-      x += (tx - x) * 0.18;
-      y += (ty - y) * 0.18;
-      dot.style.transform = 'translate(' + x + 'px,' + y + 'px)';
-      requestAnimationFrame(render);
-    };
-    render();
     const hoverTargets = document.querySelectorAll('a, button, .skill-card, .project-card, .contact-socials a');
     hoverTargets.forEach(el => {
       el.addEventListener('mouseenter', () => dot.classList.add('cursor-hover'));
@@ -620,21 +541,6 @@
     });
   }
 
-  // ============================================
-  // PRELOADER
-  // ============================================
-  function initPreloader() {
-    const preloader = document.getElementById('preloader');
-    if (!preloader) return;
-    const hide = () => preloader.classList.add('is-hidden');
-    if (document.readyState === 'complete') {
-      setTimeout(hide, 400);
-    } else {
-      window.addEventListener('load', () => setTimeout(hide, 400));
-      setTimeout(hide, 1800);
-    }
-  }
-
   // INITIALIZATION
   // ============================================
   function init() {
@@ -645,27 +551,33 @@
       return;
     }
 
-    if (!prefersReducedMotion) {
-      initParticles();
+    initScrollProgress();
+    initNavActiveState();
+    initCopyEmail();
+    initFooterYear();
+    initRipples();
+
+    if (prefersReducedMotion) return;
+
+    const startNonCriticalAnimations = () => {
       initHeroTextReveal();
       initParallaxFrames();
       initSectionRuleDraw();
       initTypewriter();
       initCursorFollower();
       initSkillGlow();
-    }
+      init3DCardEffect();
+      initSkillsGridReveal();
+      initInfoCardsReveal();
+      initFooterAnimation();
+      initMagneticNav();
+    };
 
-    initScrollProgress();
-    initNavActiveState();
-    initCopyEmail();
-    initFooterYear();
-    init3DCardEffect();
-    initSkillsGridReveal();
-    initInfoCardsReveal();
-    initFooterAnimation();
-    initMagneticNav();
-    initRipples();
-    initPreloader();
+    if ('requestIdleCallback' in window) {
+      window.requestIdleCallback(startNonCriticalAnimations, { timeout: 1200 });
+    } else {
+      window.setTimeout(startNonCriticalAnimations, 800);
+    }
   }
 
   // Initialize when DOM is ready
