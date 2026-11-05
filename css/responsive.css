@@ -1,10 +1,20 @@
 /* Mobile-first: 360px minimum, no horizontal overflow */
 
 @media (max-width: 768px) {
+    .overview-lead,
+    .dashboard-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .dashboard-grid > section:last-child {
+        padding-top: 0;
+    }
+
     /* Player identity - stacked on mobile */
     .player-identity {
         grid-template-columns: 1fr;
         gap: clamp(1rem, 3vw, 1.5rem);
+        margin-bottom: 0;
     }
 
     .player-identity__avatar {
@@ -36,8 +46,8 @@
     }
 
     .achievement-section__ring {
-        width: 100%;
-        max-width: 200px;
+        width: 160px;
+        height: 160px;
         margin: 0 auto;
     }
 
@@ -70,13 +80,13 @@
 
     /* Ranked list - adjust on mobile */
     .ranked-list__item {
-        grid-template-columns: clamp(40px, 1fr) clamp(1fr, 1fr) 1fr clamp(1.5fr, 2fr);
+        grid-template-columns: 2rem 3.75rem minmax(0, 1fr) auto;
         gap: clamp(0.4rem, 0.8vw, 0.6rem);
     }
 
     .ranked-list__thumbnail {
-        width: clamp(36px, 1fr, 60px);
-        height: clamp(21px, 1fr, 35px);
+        width: 3.75rem;
+        height: 2.2rem;
     }
 
     .ranked-list__title {
@@ -99,7 +109,7 @@
 
     /* Most played banner - adjust on mobile */
     .most-played-banner {
-        height: clamp(200px, 16vw, 300px);
+        height: auto;
     }
 
     .player-identity__big-number {
@@ -118,13 +128,13 @@
 /* Tablet breakpoint for layout adjustments */
 @media (min-width: 769px) and (max-width: 1024px) {
     .ranked-list__item {
-        grid-template-columns: clamp(50px, 1fr) clamp(100px, 1fr) 1fr clamp(2fr, 1fr);
+        grid-template-columns: 3rem 6rem minmax(0, 1fr) auto;
         gap: clamp(0.6rem, 1vw, 0.8rem);
     }
 
     .ranked-list__thumbnail {
-        width: clamp(50px, 1.5fr, 100px);
-        height: clamp(30px, 1fr, 60px);
+        width: 6rem;
+        height: 3.75rem;
     }
 }
 
@@ -163,14 +173,7 @@ body {
     padding-right: clamp(0.75rem, 1.2vw, 1.5rem);
 }
 
-/* achievements responsive */
-.content {
-    display: flow-root;
-}
-
-/* achievements responsive */
-# Achievements page specific responsive layout
-
+/* Achievements page responsive */
 .achievements__main-grid {
     grid-template-columns: 1fr;
     gap: clamp(2rem, 4vw, 3rem);

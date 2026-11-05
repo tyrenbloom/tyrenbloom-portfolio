@@ -18,9 +18,9 @@
         <nav class="sidebar" aria-label="Main navigation">
             <div class="sidebar__wordmark">PLAYTRACE</div>
             <nav aria-label="Navigation links">
-                <ul class="sidebar__list" style="list-style: none; padding: 0; margin: 0;">
+                <ul class="sidebar__list">
                     <li>
-                        <a href="index.html" class="sidebar__link">
+                        <a href="../showcase/playtrace.html" class="sidebar__link">
                             <span>01</span> Overview
                         </a>
                     </li>
@@ -49,62 +49,59 @@
 
                 <section class="game-detail-banner" aria-labelledby="game-title">
                     <div class="game-detail-banner__title-strip">
-                        <h1 id="game-title" class="game-detail-banner__title">No game selected</h1>
+                        <div class="game-detail-banner__title-image">
+                            <img
+                                src="https://cdn.cloudflare.steamstatic.com/steam/apps/1203220/capsule_616x353.jpg"
+                                alt="NARAKA: BLADEPOINT game cover"
+                                class="game-detail-banner__image"
+                            >
+                        </div>
+                        <h1 id="game-title" class="game-detail-banner__title">NARAKA: BLADEPOINT</h1>
                     </div>
                 </section>
 
                 <div class="game-detail-stats" role="list" aria-label="Game statistics">
                     <div class="game-detail-stat" role="listitem">
-                        <span class="game-detail-stat__value">0</span>
+                        <span class="game-detail-stat__value">4,140.5</span>
                         <span class="game-detail-stat__label">Hours</span>
                     </div>
                     <div class="game-detail-stat" role="listitem">
-                        <span class="game-detail-stat__value">0/0</span>
+                        <span class="game-detail-stat__value">39/40</span>
                         <span class="game-detail-stat__label">Achievements</span>
                     </div>
                     <div class="game-detail-stat" role="listitem">
-                        <span class="game-detail-stat__value">0%</span>
+                        <span class="game-detail-stat__value">97.5%</span>
                         <span class="game-detail-stat__label">Completion</span>
                     </div>
                     <div class="game-detail-stat" role="listitem">
-                        <span class="game-detail-stat__value">--</span>
+                        <span class="game-detail-stat__value">Nov 2</span>
                         <span class="game-detail-stat__label">Last played</span>
                     </div>
                 </div>
 
                 <div class="game-detail-body">
                     <aside class="game-detail-sidebar" aria-labelledby="completion-heading">
-                        <p class="game-detail-completion" id="completion-heading">0%</p>
+                        <p class="game-detail-completion" id="completion-heading">97.5%</p>
                         <p class="game-detail-completion__label">Completion</p>
-                        <progress max="0" value="0" aria-label="Game: 0 of 0 achievements unlocked"></progress>
+                        <progress max="40" value="39" aria-label="NARAKA: BLADEPOINT: 39 unlocked out of 40"></progress>
                         <dl class="game-detail-dl">
                             <dt>Hours played</dt>
-                            <dd>0</dd>
+                            <dd>4,140.5</dd>
                             <dt>Achievements</dt>
-                            <dd>0 / 0</dd>
+                            <dd>39 / 40</dd>
                             <dt>Completion</dt>
-                            <dd>0%</dd>
+                            <dd>97.5%</dd>
                             <dt>Last played</dt>
-                            <dd>--</dd>
+                            <dd>Nov 2</dd>
                         </dl>
                     </aside>
 
                     <div class="game-detail-sections">
-                        <section class="game-detail-section" aria-labelledby="unlocked-heading">
-                            <h2 id="unlocked-heading" class="game-detail-section__heading">Unlocked</h2>
-                            <div class="game-detail-achievements">
-                            <!-- Add your achievements here. Duplicate an article block per achievement. -->
-                        </div>
+                        <section class="game-detail-section" aria-labelledby="connected-data-heading">
+                            <h2 id="connected-data-heading" class="game-detail-section__heading">Connected achievement data</h2>
+                            <p class="game-detail-notice">NARAKA: BLADEPOINT has 39 of 40 achievements unlocked. Individual achievement names are available through Steam.</p>
+                            <a href="https://steamcommunity.com/profiles/76561198334430826/achievements/1203220" target="_blank" rel="noopener noreferrer" class="achievement-list__link">View achievements on Steam</a>
                         </section>
-
-                        <section class="game-detail-section" aria-labelledby="locked-heading">
-                            <h2 id="locked-heading" class="game-detail-section__heading">Locked</h2>
-                            <div class="game-detail-achievements">
-                            <!-- Add your achievements here. Duplicate an article block per achievement. -->
-                        </div>
-                        </section>
-
-                        <p class="game-detail-notice">Showing 0 of 0 achievements. Sample data.</p>
                     </div>
                 </div>
 

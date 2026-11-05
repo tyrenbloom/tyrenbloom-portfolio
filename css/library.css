@@ -113,6 +113,11 @@
     border-color: var(--accent);
 }
 
+.library-toolbar__filter-link--active {
+    color: var(--text);
+    border-color: var(--accent);
+}
+
 .library-toolbar__note {
     font-family: var(--font-mono);
     font-size: clamp(0.7rem, 0.9vw, 0.75rem);
@@ -149,12 +154,27 @@
     border-color: var(--accent);
 }
 
-.library-tile__image {
+.library-tile__cover {
     width: 100%;
-    aspect-ratio: 460 / 215;
-    object-fit: cover;
+    aspect-ratio: 616 / 353;
+    overflow: hidden;
     background-color: var(--surface-2);
     border-bottom: 1px solid var(--border);
+}
+
+.library-tile__cover-image {
+    width: 100%;
+    height: 100%;
+    aspect-ratio: 616 / 353;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+    background-color: var(--surface-2);
+    transition: transform 200ms ease;
+}
+
+.library-tile:hover .library-tile__cover-image {
+    transform: scale(1.03);
 }
 
 .library-tile__content {
@@ -227,4 +247,36 @@
     text-transform: uppercase;
     letter-spacing: 0.1em;
     border-radius: var(--radius);
+}
+
+.library-tile__stats {
+    display: flex;
+    align-items: center;
+    gap: clamp(0.5rem, 1vw, 0.75rem);
+    margin-bottom: clamp(0.75rem, 1vw, 1rem);
+}
+
+.library-tile__stat {
+    font-family: var(--font-mono);
+    font-size: clamp(0.7rem, 1vw, 0.8rem);
+    color: var(--text-muted);
+}
+
+.library-tile__stat-badge {
+    padding: clamp(0.15rem, 0.5vw, 0.25rem);
+    font-size: clamp(0.65rem, 1vw, 0.75rem);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    border-radius: var(--radius);
+    white-space: nowrap;
+}
+
+.library-tile__stat-badge--progress {
+    background-color: var(--accent);
+    color: #fff;
+}
+
+.library-tile__stat-badge--unknown {
+    background-color: var(--surface-2);
+    color: var(--text-muted);
 }

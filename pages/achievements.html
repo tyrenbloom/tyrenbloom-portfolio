@@ -17,308 +17,73 @@
         <nav class="sidebar" aria-label="Main navigation">
             <div class="sidebar__wordmark">PLAYTRACE</div>
             <nav aria-label="Navigation links">
-                <ul class="sidebar__list" style="list-style: none; padding: 0; margin: 0;">
-                    <li>
-                        <a href="../showcase/playtrace.html" class="sidebar__link">
-                            <span>01</span> Overview
-                        </a>
-                    </li>
-                    <li>
-                        <a href="library.html" class="sidebar__link">
-                            <span>02</span> Library
-                        </a>
-                    </li>
-                    <li>
-                        <a href="game-details.html" class="sidebar__link">
-                            <span>03</span> Game Details
-                        </a>
-                    </li>
-                    <li>
-                        <a href="achievements.html" class="sidebar__link sidebar__link--active">
-                            <span>04</span> Achievements
-                        </a>
-                    </li>
+                <ul class="sidebar__list">
+                    <li><a href="../showcase/playtrace.html" class="sidebar__link"><span>01</span> Overview</a></li>
+                    <li><a href="library.html" class="sidebar__link"><span>02</span> Library</a></li>
+                    <li><a href="game-details.html" class="sidebar__link"><span>03</span> Game Details</a></li>
+                    <li><a href="achievements.html" class="sidebar__link sidebar__link--active"><span>04</span> Achievements</a></li>
                 </ul>
             </nav>
         </nav>
 
         <main id="main" class="main">
             <div class="content">
-                <!-- Header -->
                 <section aria-labelledby="achievements-heading">
                     <h1 id="achievements-heading" class="achievements__header">
-                        <span class="achievements__count">359</span>
+                        <span class="achievements__count">39</span>
                         <span class="achievements__of">OF</span>
-                        <span class="achievements__total">494</span>
-                        <span class="achievements__percentage">72.7%</span>
+                        <span class="achievements__total">40</span>
+                        <span class="achievements__percentage">97.5%</span>
                     </h1>
-                    <progress max="494" value="359" class="achievements__progress" aria-label="Overall achievements: 359 unlocked out of 494"></progress>
+                    <progress max="40" value="39" class="achievements__progress" aria-label="NARAKA: BLADEPOINT achievements: 39 unlocked out of 40"></progress>
+                    <p class="achievements__grid-note">Connected game: NARAKA: BLADEPOINT</p>
                 </section>
 
-                <!-- Main Grid -->
                 <div class="achievements__main-grid">
-                    <!-- Recently Unlocked -->
-                    <section aria-labelledby="recent-heading">
-                        <h2 id="recent-heading" class="achievements__section-title">Recently Unlocked</h2>
-                        <div class="achievements__timeline">
-                            <span class="achievements__timeline-line"></span>
-
-                            <article class="achievements__timeline-item">
-                                <time datetime="2026-10-28">28 Oct 2026</time>
-                                <div class="achievements__timeline-content">
-                                    <span class="achievements__rarity">38.2%</span>
-                                    <h3 class="achievements__achievement-name">Defeated the Hollow Knight</h3>
-                                    <p class="achievements__game-name">Hollow Knight</p>
-                                </div>
+                    <section aria-labelledby="connected-heading">
+                        <h2 id="connected-heading" class="achievements__section-title">Connected games</h2>
+                        <div class="achievements__rarest-list">
+                            <article class="achievements__rarest-item">
+                                <span class="achievements__rarity-number">39/40</span>
+                                <span class="achievements__rarest-title">NARAKA: BLADEPOINT</span>
+                                <span class="achievements__rarest-game">97.5% complete</span>
                             </article>
-
-                            <article class="achievements__timeline-item">
-                                <time datetime="2026-10-24">24 Oct 2026</time>
-                                <div class="achievements__timeline-content">
-                                    <span class="achievements__rarity">21.4%</span>
-                                    <h3 class="achievements__achievement-name">Master of the Rift</h3>
-                                    <p class="achievements__game-name">Baldur's Gate 3</p>
-                                </div>
-                            </article>
-
-                            <article class="achievements__timeline-item">
-                                <time datetime="2026-10-19">19 Oct 2026</time>
-                                <div class="achievements__timeline-content">
-                                    <span class="achievements__rarity">11.6%</span>
-                                    <h3 class="achievements__achievement-name">Mathematician</h3>
-                                    <p class="achievements__game-name">Hades</p>
-                                </div>
-                            </article>
-
-                            <article class="achievements__timeline-item">
-                                <time datetime="2026-10-11">11 Oct 2026</time>
-                                <div class="achievements__timeline-content">
-                                    <span class="achievements__rarity">54.9%</span>
-                                    <h3 class="achievements__achievement-name">Season's Greetings</h3>
-                                    <p class="achievements__game-name">Stardew Valley</p>
-                                </div>
-                            </article>
-
-                            <article class="achievements__timeline-item">
-                                <time datetime="2026-10-03">03 Oct 2026</time>
-                                <div class="achievements__timeline-content">
-                                    <span class="achievements__rarity">9.7%</span>
-                                    <h3 class="achievements__achievement-name">Moon Lord Slayer</h3>
-                                    <p class="achievements__game-name">Terraria</p>
-                                </div>
+                            <article class="achievements__rarest-item">
+                                <span class="achievements__rarity-number">—</span>
+                                <span class="achievements__rarest-title">Deadlock</span>
+                                <span class="achievements__rarest-game">Achievement data unavailable</span>
                             </article>
                         </div>
                     </section>
 
-                    <!-- Rarest -->
-                    <section aria-labelledby="rarest-heading">
-                        <h2 id="rarest-heading" class="achievements__section-title">RAREST</h2>
-                        <div class="achievements__rarest-list">
-                            <article class="achievements__rarest-item">
-                                <span class="achievements__rarity-number">9.7%</span>
-                                <span class="achievements__rarest-title">Moon Lord Slayer</span>
-                                <span class="achievements__rarest-game">Terraria</span>
-                            </article>
-
-                            <article class="achievements__rarest-item">
-                                <span class="achievements__rarity-number">11.6%</span>
-                                <span class="achievements__rarest-title">Mathematician</span>
-                                <span class="achievements__rarest-game">Hades</span>
-                            </article>
-
-                            <article class="achievements__rarest-item">
-                                <span class="achievements__rarity-number">21.4%</span>
-                                <span class="achievements__rarest-title">Master of the Rift</span>
-                                <span class="achievements__rarest-game">Baldur's Gate 3</span>
-                            </article>
-
-                            <article class="achievements__rarest-item">
-                                <span class="achievements__rarity-number">38.2%</span>
-                                <span class="achievements__rarest-title">Defeated the Hollow Knight</span>
-                                <span class="achievements__rarest-game">Hollow Knight</span>
-                            </article>
-                        </div>
+                    <section aria-labelledby="source-heading">
+                        <h2 id="source-heading" class="achievements__section-title">Data source</h2>
+                        <p class="achievements__grid-note">Only games connected in the PLAYTRACE library appear here. Individual achievement names are hidden when the connected data does not provide them.</p>
+                        <a href="https://steamcommunity.com/profiles/76561198334430826/achievements/1203220" target="_blank" rel="noopener noreferrer" class="achievement-list__link">View NARAKA achievements on Steam</a>
                     </section>
                 </div>
 
-                <!-- Achievement Grid -->
-                <section aria-labelledby="grid-heading">
-                    <h2 id="grid-heading">Achievement</h2>
-
-                    <div class="achievements__grid-header">
-                        <span class="achievements__grid-note">Showing 24 of 494. Sample data.</span>
-                        <ul class="achievements__legend" role="list" aria-label="Achievement states explanation">
-                            <li class="achievements__legend-item" role="listitem">
-                                <span class="achievements__legend-unlocked">UNLOCKED</span>
-                                <span class="achievements__legend-locked">LOCKED</span>
-                            </li>
-                        </ul>
-                    </div>
-
+                <section aria-labelledby="status-heading">
+                    <h2 id="status-heading">Achievement status</h2>
                     <div class="achievements__grid">
-                        <!-- Unlocked tiles (16) -->
                         <article class="achievements__tile achievements__tile--unlocked">
-                            <span class="achievements__tile-initials">SH</span>
-                            <span class="achievements__tile-name">Sample Unlock</span>
-                            <span class="achievements__tile-game">Naraka: BLADEPOINT</span>
-                            <span class="achievements__tile-state">unlocked</span>
+                            <span class="achievements__tile-initials">39</span>
+                            <span class="achievements__tile-name">Unlocked</span>
+                            <span class="achievements__tile-game">NARAKA: BLADEPOINT</span>
+                            <span class="achievements__tile-state">connected data</span>
                         </article>
-
-                        <article class="achievements__tile achievements__tile--unlocked">
-                            <span class="achievements__tile-initials">DL</span>
-                            <span class="achievements__tile-name">Dedicated Player</span>
-                            <span class="achievements__tile-game">Apex Legends</span>
-                            <span class="achievements__tile-state">unlocked</span>
-                        </article>
-
-                        <article class="achievements__tile achievements__tile--unlocked">
-                            <span class="achievements__tile-initials">VH</span>
-                            <span class="achievements__tile-name">Victory Royale</span>
-                            <span class="achievements__tile-game">Apex Legends</span>
-                            <span class="achievements__tile-state">unlocked</span>
-                        </article>
-
-                        <article class="achievements__tile achievements__tile--unlocked">
-                            <span class="achievements__tile-initials">BW</span>
-                            <span class="achievements__tile-name">Blood Hunt Legacy</span>
-                            <span class="achievements__tile-game">Vampire: The Masquerade - Bloodhunt</span>
-                            <span class="achievements__tile-state">unlocked</span>
-                        </article>
-
-                        <article class="achievements__tile achievements__tile--unlocked">
-                            <span class="achievements__tile-initials">FF</span>
-                            <span class="achievements__tile-name">Finals Champion</span>
-                            <span class="achievements__tile-game">THE FINALS</span>
-                            <span class="achievements__tile-state">unlocked</span>
-                        </article>
-
-                        <article class="achievements__tile achievements__tile--unlocked">
-                            <span class="achievements__tile-initials">CP</span>
-                            <span class="achievements__tile-name">Craftmaster</span>
-                            <span class="achievements__tile-game">Craftopia</span>
-                            <span class="achievements__tile-state">unlocked</span>
-                        </article>
-
-                        <article class="achievements__tile achievements__tile--unlocked">
-                            <span class="achievements__tile-initials">MR</span>
-                            <span class="achievements__tile-name">Milestone</span>
-                            <span class="achievements__tile-game">Marvel Rivals</span>
-                            <span class="achievements__tile-state">unlocked</span>
-                        </article>
-
-                        <article class="achievements__tile achievements__tile--unlocked">
-                            <span class="achievements__tile-initials">0</span>
-                            <span class="achievements__tile-name">Alpha Game</span>
-                            <span class="achievements__tile-game">Deadlock</span>
-                            <span class="achievements__tile-state">unlocked</span>
-                        </article>
-
-                        <!-- Locked tiles (8) -->
                         <article class="achievements__tile achievements__tile--locked">
-                            <span class="achievements__tile-initials achievements__tile-initials--outline">???</span>
-                            <span class="achievements__tile-name achievements__tile-name--muted">Hidden Achievement</span>
-                            <span class="achievements__tile-game achievements__tile-game--muted">Naraka: BLADEPOINT</span>
-                            <span class="achievements__tile-state achievements__tile-state--muted">locked</span>
-                        </article>
-
-                        <article class="achievements__tile achievements__tile--locked">
-                            <span class="achievements__tile-initials achievements__tile-initials--outline">??</span>
-                            <span class="achievements__tile-name achievements__tile-name--muted">Ranked Master</span>
-                            <span class="achievements__tile-game achievements__tile-game--muted">Apex Legends</span>
-                            <span class="achievements__tile-state achievements__tile-state--muted">locked</span>
-                        </article>
-
-                        <article class="achievements__tile achievements__tile--locked">
-                            <span class="achievements__tile-initials achievements__tile-initials--outline">?????</span>
-                            <span class="achievements__tile-name achievements__tile-name--muted">Veteran Hunter</span>
-                            <span class="achievements__tile-game achievements__tile-game--muted">Vampire: The Masquerade - Bloodhunt</span>
-                            <span class="achievements__tile-state achievements__tile-state--muted">locked</span>
-                        </article>
-
-                        <article class="achievements__tile achievements__tile--locked">
-                            <span class="achievements__tile-initials achievements__tile-initials--outline">????</span>
-                            <span class="achievements__tile-name achievements__tile-name--muted">Victor</span>
-                            <span class="achievements__tile-game achievements__tile-game--muted">THE FINALS</span>
-                            <span class="achievements__tile-state achievements__tile-state--muted">locked</span>
-                        </article>
-
-                        <article class="achievements__tile achievements__tile--locked">
-                            <span class="achievements__tile-initials achievements__tile-initials--outline">????</span>
-                            <span class="achievements__tile-name achievements__tile-name--muted">Builder Supreme</span>
-                            <span class="achievements__tile-game achievements__tile-game--muted">Craftopia</span>
-                            <span class="achievements__tile-state achievements__tile-state--muted">locked</span>
-                        </article>
-
-                        <article class="achievements__tile achievements__tile--locked">
-                            <span class="achievements__tile-initials achievements__tile-initials--outline">?????0</span>
-                            <span class="achievements__tile-name achievements__tile-name--muted">Challenger</span>
-                            <span class="achievements__tile-game achievements__tile-game--muted">Marvel Rivals</span>
-                            <span class="achievements__tile-state achievements__tile-state--muted">locked</span>
-                        </article>
-
-                        <article class="achievements__tile achievements__tile--locked">
-                            <span class="achievements__tile-initials achievements__tile-initials--outline">???0</span>
-                            <span class="achievements__tile-name achievements__tile-name--muted">Game Master</span>
-                            <span class="achievements__tile-game achievements__tile-game--muted">Deadlock</span>
-                            <span class="achievements__tile-state achievements__tile-state--muted">locked</span>
+                            <span class="achievements__tile-initials achievements__tile-initials--outline">01</span>
+                            <span class="achievements__tile-name achievements__tile-name--muted">Remaining</span>
+                            <span class="achievements__tile-game achievements__tile-game--muted">NARAKA: BLADEPOINT</span>
+                            <span class="achievements__tile-state achievements__tile-state--muted">connected data</span>
                         </article>
                     </div>
                 </section>
 
-                <!-- Per-Game Completion -->
-                <section aria-labelledby="per-game-heading">
-                    <h2 id="per-game-heading">Per-Game Completion</h2>
-                    <article class="achievement-section">
-                        <div class="achievement-section__ring"></div>
-                        <div class="achievement-section__list">
-                            <article class="achievement-list__item">
-                                <span class="achievement-list__progress">80 of 176</span>
-                                <span class="achievement-list__game-title">Naraka: BLADEPOINT</span>
-                                <progress max="176" value="80" aria-label="Naraka: BLADEPOINT achievements: 80 unlocked out of 176"></progress>
-                            </article>
-                            <article class="achievement-list__item">
-                                <span class="achievement-list__progress">31 of 103</span>
-                                <span class="achievement-list__game-title">Apex Legends</span>
-                                <progress max="103" value="31" aria-label="Apex Legends achievements: 31 unlocked out of 103"></progress>
-                            </article>
-                            <article class="achievement-list__item">
-                                <span class="achievement-list__progress">80 of 342</span>
-                                <span class="achievement-list__game-title">TBH: Task Bar Hero</span>
-                                <progress max="342" value="80" aria-label="TBH: Task Bar Hero achievements: 80 unlocked out of 342"></progress>
-                            </article>
-                            <article class="achievement-list__item">
-                                <span class="achievement-list__progress">24 of 65</span>
-                                <span class="achievement-list__game-title">Vampire: The Masquerade - Bloodhunt</span>
-                                <progress max="65" value="24" aria-label="Vampire: The Masquerade - Bloodhunt achievements: 24 unlocked out of 65"></progress>
-                            </article>
-                            <article class="achievement-list__item">
-                                <span class="achievement-list__progress">21 of 182</span>
-                                <span class="achievement-list__game-title">THE FINALS</span>
-                                <progress max="182" value="21" aria-label="THE FINALS achievements: 21 unlocked out of 182"></progress>
-                            </article>
-                            <article class="achievement-list__item">
-                                <span class="achievement-list__progress">21 of 182</span>
-                                <span class="achievement-list__game-title">Craftopia</span>
-                                <progress max="182" value="21" aria-label="Craftopia achievements: 21 unlocked out of 182"></progress>
-                            </article>
-                            <article class="achievement-list__item">
-                                <span class="achievement-list__progress">11 of 160</span>
-                                <span class="achievement-list__game-title">Marvel Rivals</span>
-                                <progress max="160" value="11" aria-label="Marvel Rivals achievements: 11 unlocked out of 160"></progress>
-                            </article>
-                            <article class="achievement-list__item" data-complete="true">
-                                <span class="achievement-list__progress">0 of 0</span>
-                                <span class="achievement-list__game-title">Deadlock</span>
-                                <progress max="0" value="0" aria-label="Deadlock achievements (alpha game): 0 unlocked out of 0"></progress>
-                            </article>
-                        </div>
-                    </div>
-                </section>
-
-                <!-- Footer -->
                 <footer class="footer">
                     <div class="footer__name">PLAYTRACE</div>
-                    <p>Sample data</p>
+                    <p>Connected game data only</p>
                 </footer>
             </div>
         </main>

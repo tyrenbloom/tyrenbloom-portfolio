@@ -25,6 +25,18 @@
   // Check for reduced motion preference
   const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
+  function initHeaderState() {
+    const header = document.querySelector('.site-header');
+    if (!header) return;
+
+    const update = () => {
+      header.classList.toggle('scrolled', window.scrollY > 24);
+    };
+
+    update();
+    window.addEventListener('scroll', update, { passive: true });
+  }
+
   // ============================================
   // 1. PARTICLE NETWORK BACKGROUND
   // ============================================
@@ -552,6 +564,7 @@
     }
 
     initScrollProgress();
+    initHeaderState();
     initNavActiveState();
     initCopyEmail();
     initFooterYear();

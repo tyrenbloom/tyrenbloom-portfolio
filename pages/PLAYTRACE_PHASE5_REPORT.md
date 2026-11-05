@@ -10,7 +10,7 @@ All links have correct ../ paths from portfolio/showcase/playtrace.html
 - game-details.html: Overview → overview/playtrace.html (wrong relative path)
 - achievements.html: Has correct paths
 
-### ⚠️ Issue: library.html and game-details.html use ../showcase/playtrace.html instead of ../index.html
+### ✅ Fixed: Library and Game Details now link to the showcase overview.
 
 ## 2. Data Consistency
 
@@ -31,13 +31,18 @@ All links have correct ../ paths from portfolio/showcase/playtrace.html
 2. `.skill-card` transitions in both files
 3. `.nav-link` transitions defined twice
 
-### ⚠️ Inline style found:
-- library.html line 22: `<ul class="sidebar__list" style="list-style: none; padding: 0; margin: 0;">`
+### ✅ Fixed: Sidebar list reset moved into `.sidebar__list` CSS; inline styles were removed.
 
 ### ⚠️ Hard-coded hex value (line 1395 in styles.css):
 `.showcase-card__visual` has `linear-gradient(135deg, var(--surface) 0%, #2a3a6b 100%)`
 
 ### ✅ No unused custom properties found
+
+## 7. Follow-up implementation
+
+- Library header totals now reflect the two displayed games and 4,874.8 hours.
+- Library search, sorting, filter state, and empty results messaging are functional in `js/library.js`.
+- Game Details duplicate locked section and malformed closing markup were removed.
 
 ## 4. Responsive Checklist
 
@@ -61,7 +66,7 @@ All links have correct ../ paths from portfolio/showcase/playtrace.html
 ### ✅ Heading structure:
 - index.html: h1 = "Tyrone Jash N. Schofield"
 - playtrace.html: no h1 (main page title in body)
-- library.html: h1 = "0 GAMES"
+- library.html: h1 = "2 GAMES"
 - game-details.html: h1 = "Game Title"
 - achievements.html: section heading = h1 = "Achievements"
 

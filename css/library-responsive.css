@@ -8,7 +8,7 @@
         grid-column: span 1;
     }
 
-    .library-tile__image {
+    .library-tile__cover {
         aspect-ratio: 16/9;
     }
 
@@ -39,8 +39,8 @@
         text-align: center;
     }
 
-    .library-grid__feature-item .library-tile__image {
-        aspect-ratio: 460 / 215;
+    .library-grid__feature-item .library-tile__cover {
+        aspect-ratio: 616 / 353;
     }
 }
 
@@ -54,7 +54,7 @@
         grid-row: span 1;
     }
 
-    .library-tile__image {
+    .library-tile__cover {
         aspect-ratio: 1.2;
     }
 }
