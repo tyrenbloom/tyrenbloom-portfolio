@@ -28,11 +28,17 @@
   function initNativeHeroTextReveal() {
     const heroTitle = document.querySelector('.hero h1[data-staggered-text="words"]');
     if (!heroTitle) return;
+    if (heroTitle.dataset.staggeredReady === 'true') return;
 
     const words = heroTitle.textContent.trim().split(/\s+/);
     heroTitle.innerHTML = words.map((word, index) => `<span class="staggered-word" style="--stagger-index: ${index}">${word}</span>`).join('');
+    heroTitle.dataset.staggeredReady = 'true';
     heroTitle.querySelectorAll('.staggered-word').forEach((word, index) => {
-      word.classList.add('is-visible');
+      if (prefersReducedMotion) {
+        word.classList.add('is-visible');
+      } else {
+        window.setTimeout(() => word.classList.add('is-visible'), 250 + (index * 45));
+      }
       word.style.animationDelay = `${index * 45}ms`;
     });
   }
@@ -69,7 +75,7 @@
       return;
     }
 
-    if (heroTitle.dataset.staggeredText === 'words') {
+    if (heroTitle.dataset.staggeredText === 'words' && heroTitle.dataset.staggeredReady !== 'true') {
       const words = heroTitle.textContent.trim().split(/\s+/);
       heroTitle.innerHTML = words.map((word) => `<span class="staggered-word">${word}</span>`).join('');
       gsap.fromTo(heroTitle.querySelectorAll('.staggered-word'),
@@ -577,11 +583,11 @@
   // INITIALIZATION
   // ============================================
   function init() {
+    initNativeHeroTextReveal();
     const hasLoadedScripts = typeof gsap !== 'undefined' && gsap.registerPlugin;
 
     if (!hasLoadedScripts) {
       console.warn('GSAP libraries not loaded yet');
-      if (!prefersReducedMotion) initNativeHeroTextReveal();
       return;
     }
 
