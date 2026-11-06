@@ -65,7 +65,7 @@
   }
 
   function renderShowcaseCard(project) {
-    return `<a class="showcase-card" href="/projects/${project.slug}" aria-label="View ${escapeShowcaseText(project.title)} project">
+    return `<a class="showcase-card showcase-card--${project.slug}" href="/projects/${project.slug}" aria-label="View ${escapeShowcaseText(project.title)} project">
       <div class="showcase-card__visual">
         <img src="${project.cover}" alt="${escapeShowcaseText(project.title)} project cover" width="1920" height="780" loading="lazy" decoding="async">
         <div class="showcase-card__overlay"><span>${project.title} / ${project.index}</span><strong>${project.tagline}</strong></div>
