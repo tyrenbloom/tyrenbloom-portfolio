@@ -25,6 +25,114 @@
   // Check for reduced motion preference
   const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
+  const showcaseProjects = [
+    {
+      slug: 'playtrace',
+      title: 'PLAYTRACE',
+      index: '01',
+      tagline: 'CONNECTED STEAM DATA',
+      tags: 'WEB DEVELOPMENT · CSS GRID · DESIGN SYSTEM',
+      cover: '/assets/deadlock-hero.jpg',
+      role: 'Designer & developer',
+      year: '2025',
+      stack: 'HTML · CSS · JavaScript',
+      description: 'A personal Steam-style gaming statistics site built from scratch, combining a responsive editorial layout with native progress visualizations and a focused design system.',
+      images: ['/assets/deadlock-hero.jpg', '/assets/deadlock-hero.jpg'],
+      liveUrl: '/showcase/playtrace.html',
+      repoUrl: 'https://github.com/tyrenbloom/tyrenbloom-portfolio'
+    },
+    {
+      slug: 'ritual',
+      title: 'RITUAL',
+      index: '02',
+      tagline: 'A QUIET PLACE TO KEEP PROMISES',
+      tags: 'FULL-STACK · NODE.JS · SQLITE',
+      cover: '/assets/ritual-dashboard.png',
+      role: 'Product designer & developer',
+      year: '2026',
+      stack: 'HTML · CSS · JavaScript · Express',
+      description: 'A personal habit and study tracker for daily check-ins, streaks, calendar heatmaps, and weekly progress reviews.',
+      images: ['/assets/ritual-dashboard.png'],
+      liveUrl: '/ritual',
+      repoUrl: 'https://github.com/tyrenbloom/tyrenbloom-portfolio'
+    },
+  ];
+
+  function escapeShowcaseText(value) {
+    return String(value).replace(/[&<>"']/g, (character) => ({
+      '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#039;'
+    }[character]));
+  }
+
+  function renderShowcaseCard(project) {
+    return `<a class="showcase-card" href="/projects/${project.slug}" aria-label="View ${escapeShowcaseText(project.title)} project">
+      <div class="showcase-card__visual">
+        <img src="${project.cover}" alt="${escapeShowcaseText(project.title)} project cover" width="1920" height="780" loading="lazy" decoding="async">
+        <div class="showcase-card__overlay"><span>${project.title} / ${project.index}</span><strong>${project.tagline}</strong></div>
+      </div>
+      <div class="showcase-card__details">
+        <span class="showcase-card__kicker">${project.tags}</span>
+        <h3>${project.title}</h3>
+        <p class="showcase-card__subtitle">${escapeShowcaseText(project.description)}</p>
+        <span class="showcase-link">View project <span aria-hidden="true">&rarr;</span></span>
+      </div>
+    </a>`;
+  }
+
+  function renderProjectDetail(project) {
+    const position = showcaseProjects.findIndex((item) => item.slug === project.slug);
+    const next = showcaseProjects[(position + 1) % showcaseProjects.length];
+    return `<article class="project-detail__content">
+      <a class="project-detail__back" href="/#showcase">&larr; Back to projects</a>
+      <div class="project-detail__hero"><img src="${project.cover}" alt="${escapeShowcaseText(project.title)} project cover"></div>
+      <p class="showcase-card__kicker">${project.tags}</p>
+      <h1>${project.title}</h1>
+      <div class="project-detail__meta"><span><b>ROLE</b>${project.role}</span><span><b>YEAR</b>${project.year}</span><span><b>STACK</b>${project.stack}</span></div>
+      <p class="project-detail__description">${escapeShowcaseText(project.description)}</p>
+      <div class="project-detail__actions"><a class="button button-primary" href="${project.liveUrl}">Live site <span>&rarr;</span></a><a class="button button-secondary" href="${project.repoUrl}" target="_blank" rel="noopener noreferrer">GitHub <span>&rarr;</span></a></div>
+      <div class="project-detail__gallery">${project.images.map((image, index) => `<img src="${image}" alt="${escapeShowcaseText(project.title)} screenshot ${index + 1}" loading="lazy">`).join('')}</div>
+      <nav class="project-detail__nav" aria-label="Project navigation"><a href="/#showcase">&larr; Back to projects</a><a href="/projects/${next.slug}">Next project: ${next.title} &rarr;</a></nav>
+    </article>`;
+  }
+
+  function initShowcase() {
+    const grid = document.getElementById('showcase-grid');
+    const detail = document.getElementById('project-detail');
+    const showcase = document.getElementById('showcase');
+    if (!grid || !detail || !showcase) return;
+
+    const projectSlug = window.location.pathname.match(/^\/projects\/([^/]+)\/?$/)?.[1];
+    const project = showcaseProjects.find((item) => item.slug === projectSlug);
+    if (project) {
+      document.querySelectorAll('#main > section').forEach((section) => { section.hidden = true; });
+      detail.hidden = false;
+      detail.innerHTML = renderProjectDetail(project);
+      document.title = `${project.title} — Tyrone Schofield`;
+      return;
+    }
+
+    const main = document.getElementById('main');
+    const featured = document.getElementById('project');
+    const education = document.getElementById('education');
+    if (main && featured && education) {
+      main.insertBefore(showcase, featured);
+      main.insertBefore(featured, education);
+    }
+
+    grid.innerHTML = showcaseProjects.map(renderShowcaseCard).join('');
+    const cards = grid.querySelectorAll('.showcase-card');
+    if (prefersReducedMotion) return;
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-revealed');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+    cards.forEach((card) => observer.observe(card));
+  }
+
   function initNativeHeroTextReveal() {
     const heroTitle = document.querySelector('.hero h1[data-staggered-text="words"]');
     if (!heroTitle) return;
@@ -583,6 +691,7 @@
   // INITIALIZATION
   // ============================================
   function init() {
+    initShowcase();
     initNativeHeroTextReveal();
     const hasLoadedScripts = typeof gsap !== 'undefined' && gsap.registerPlugin;
 
