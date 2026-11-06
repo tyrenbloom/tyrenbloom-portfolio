@@ -215,6 +215,15 @@ a:focus-visible, button:focus-visible {
   margin-left: 0.22em;
 }
 
+.staggered-word.is-visible {
+  animation: staggered-word-in 0.65s cubic-bezier(.22, 1, .36, 1) both;
+}
+
+@keyframes staggered-word-in {
+  from { opacity: 0; transform: translateY(0.7em); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
 .hero h1 span {
   color: var(--aqua);
 }
@@ -1030,6 +1039,7 @@ a:focus-visible, button:focus-visible {
   .staggered-word {
     opacity: 1;
     transform: none;
+    animation: none;
   }
   *, *::before, *::after {
     scroll-behavior: auto !important;

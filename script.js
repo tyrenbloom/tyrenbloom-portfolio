@@ -25,6 +25,18 @@
   // Check for reduced motion preference
   const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
+  function initNativeHeroTextReveal() {
+    const heroTitle = document.querySelector('.hero h1[data-staggered-text="words"]');
+    if (!heroTitle) return;
+
+    const words = heroTitle.textContent.trim().split(/\s+/);
+    heroTitle.innerHTML = words.map((word, index) => `<span class="staggered-word" style="--stagger-index: ${index}">${word}</span>`).join('');
+    heroTitle.querySelectorAll('.staggered-word').forEach((word, index) => {
+      word.classList.add('is-visible');
+      word.style.animationDelay = `${index * 45}ms`;
+    });
+  }
+
   function initHeaderState() {
     const header = document.querySelector('.site-header');
     if (!header) return;
@@ -569,6 +581,7 @@
 
     if (!hasLoadedScripts) {
       console.warn('GSAP libraries not loaded yet');
+      if (!prefersReducedMotion) initNativeHeroTextReveal();
       return;
     }
 
