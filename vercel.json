@@ -1,0 +1,15 @@
+{
+  "version": 2,
+  "redirects": [
+    {
+      "source": "/ritual",
+      "destination": "https://tyrenbloom-portfolio.onrender.com/ritual",
+      "permanent": false
+    },
+    {
+      "source": "/ritual/:path*",
+      "destination": "https://tyrenbloom-portfolio.onrender.com/ritual/:path*",
+      "permanent": false
+    }
+  ]
+}
