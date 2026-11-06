@@ -586,11 +586,6 @@
     initNativeHeroTextReveal();
     const hasLoadedScripts = typeof gsap !== 'undefined' && gsap.registerPlugin;
 
-    if (!hasLoadedScripts) {
-      console.warn('GSAP libraries not loaded yet');
-      return;
-    }
-
     initScrollProgress();
     initHeaderState();
     initNavActiveState();
@@ -598,7 +593,7 @@
     initFooterYear();
     initRipples();
 
-    if (prefersReducedMotion) return;
+    if (!hasLoadedScripts || prefersReducedMotion) return;
 
     const startNonCriticalAnimations = () => {
       initHeroTextReveal();
