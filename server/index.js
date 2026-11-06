@@ -7,8 +7,9 @@ const port = Number(process.env.PORT) || 3000;
 
 app.use(express.json({ limit: '20kb' }));
 app.use('/api', api);
-app.use(express.static(path.join(__dirname, '..', 'public')));
-app.get('*', (req, res) => res.sendFile(path.join(__dirname, '..', 'public', 'index.html')));
+app.use('/ritual', express.static(path.join(__dirname, '..', 'public')));
+app.get('/ritual', (req, res) => res.sendFile(path.join(__dirname, '..', 'public', 'index.html')));
+app.get('*', (req, res) => res.sendFile(path.join(__dirname, '..', 'index.html')));
 
 app.use((error, req, res, next) => {
   if (error instanceof SyntaxError && error.status === 400) return res.status(400).json({ error: 'invalid JSON body' });
