@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PLAYTRACE - Gaming Statistics Portfolio Project</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=IBM+Plex+Sans:wght@400;500;600&family=Barlow+Condensed:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/components.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+</head>
+<body>
+    <a href="#main" class="skip-link">Skip to main content</a>
+
+    <div class="page">
+        <nav class="sidebar" aria-label="Main navigation">
+            <div class="sidebar__wordmark">PLAYTRACE</div>
+            <nav aria-label="Navigation links">
+                <ul class="sidebar__list">
+                    <li>
+                        <a href="playtrace.html" class="sidebar__link sidebar__link--active">
+                            <span>01</span> Overview
+                        </a>
+                    </li>
+                    <li>
+                        <a href="../pages/library.html" class="sidebar__link">
+                            <span>02</span> Library
+                        </a>
+                    </li>
+                    <li>
+                        <a href="../pages/game-details.html" class="sidebar__link">
+                            <span>03</span> Game Details
+                        </a>
+                    </li>
+                    <li>
+                        <a href="../pages/achievements.html" class="sidebar__link">
+                            <span>04</span> Achievements
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </nav>
+
+        <main id="main" class="main">
+            <div class="content">
+                <header class="project-intro">
+                    <span class="project-intro__eyebrow">Portfolio project / Steam data interface</span>
+                    <h1>PLAYTRACE</h1>
+                    <p>Gaming statistics dashboard for connected Steam data.</p>
+                </header>
+
+                <!-- Steam data summary -->
+                <section class="overview-lead" aria-labelledby="player-heading">
+                    <div class="player-identity" id="player-heading">
+                        <div class="player-identity__info">
+                            <div class="player-identity__big-number">4,874.8</div>
+                            <div class="player-identity__big-label">Hours Played</div>
+                            <div class="player-identity__stats-row">
+                                <span class="player-identity__stat-item">2 games</span>
+                                <span class="player-identity__stat-item">39/40 known</span>
+                                <span class="player-identity__stat-item">97.5% known</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="most-played-banner">
+                        <img
+                            src="https://cdn.cloudflare.steamstatic.com/steam/apps/1203220/capsule_616x353.jpg"
+                            alt="NARAKA: BLADEPOINT game cover"
+                            class="most-played-banner__image"
+                            width="616"
+                            height="353"
+                            loading="eager"
+                            decoding="async"
+                        >
+                        <div class="most-played-banner__content">
+                            <h2 class="most-played-banner__title">NARAKA: BLADEPOINT</h2>
+                            <div class="most-played-banner__hours">4,140.5 Hours</div>
+                            <div class="most-played-banner__hours">Last played Nov 2</div>
+                        </div>
+                    </div>
+                </section>
+
+                <div class="dashboard-grid">
+                    <!-- Top played games -->
+                    <section aria-labelledby="games-heading">
+                        <h2 id="games-heading">Top Played Games</h2>
+                        <ol class="ranked-list">
+                            <li class="ranked-list__item">
+                                <span class="ranked-list__rank">01</span>
+                                <img src="https://cdn.cloudflare.steamstatic.com/steam/apps/1203220/capsule_616x353.jpg" alt="NARAKA: BLADEPOINT game cover" class="ranked-list__thumbnail" width="616" height="353" loading="lazy">
+                                <span class="ranked-list__title">NARAKA: BLADEPOINT</span>
+                                <span class="ranked-list__hours">4,140.5h · Nov 2</span>
+                            </li>
+                            <li class="ranked-list__item">
+                                <span class="ranked-list__rank">02</span>
+                                <img src="https://cdn.cloudflare.steamstatic.com/steam/apps/1422450/header.jpg" alt="Deadlock game cover" class="ranked-list__thumbnail" width="460" height="215" loading="lazy">
+                                <span class="ranked-list__title">Deadlock</span>
+                                <span class="ranked-list__hours">734.3h · Yesterday</span>
+                            </li>
+                        </ol>
+                    </section>
+
+                    <!-- Achievement overview -->
+                    <section aria-labelledby="achievements-heading">
+                        <h2 id="achievements-heading">Achievement Overview</h2>
+                        <div class="achievement-section">
+                            <div class="achievement-section__ring achievement-section__ring--known" role="img" aria-label="Known achievements: 39 of 40 unlocked, 97.5%">
+                            </div>
+                            <div class="achievement-section__list">
+                                <article class="achievement-list__item achievement-list__item--complete">
+                                    <div class="achievement-list__header">
+                                        <span class="achievement-list__progress">39 of 40 unlocked</span>
+                                        <a href="https://steamcommunity.com/profiles/76561198334430826/achievements/1203220" target="_blank" rel="noopener noreferrer" class="achievement-list__link">View achievements</a>
+                                    </div>
+                                    <span class="achievement-list__game-title">NARAKA: BLADEPOINT</span>
+                                    <div class="achievement-list__progress-wrapper">
+                                        <progress max="40" value="39" aria-label="NARAKA: BLADEPOINT achievements: 39 unlocked out of 40"></progress>
+                                    </div>
+                                </article>
+                                <article class="achievement-list__item achievement-list__item--unknown">
+                                    <div class="achievement-list__header">
+                                        <span class="achievement-list__progress">Not available</span>
+                                    </div>
+                                    <span class="achievement-list__game-title">Deadlock</span>
+                                </article>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+
+                <!-- Footer -->
+                <footer class="footer">
+                    <div class="footer__name">PLAYTRACE</div>
+                    <p>Connected Steam data · Portfolio preview</p>
+                </footer>
+            </div>
+        </main>
+    </div>
+</body>
+</html>

@@ -1,0 +1,15 @@
+{
+  "name": "habit-study-tracker",
+  "version": "1.0.0",
+  "private": true,
+  "description": "A focused habit and study tracker.",
+  "main": "server/index.js",
+  "scripts": {
+    "start": "node server/index.js",
+    "test": "node --test tests/*.test.js"
+  },
+  "dependencies": {
+    "better-sqlite3": "^12.4.6",
+    "express": "^4.21.2"
+  }
+}

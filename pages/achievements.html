@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Achievements | PLAYTRACE</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=IBM+Plex+Sans:wght@400;500;600&family=Barlow+Condensed:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/components.css">
+</head>
+<body>
+    <a href="#main" class="skip-link">Skip to main content</a>
+
+    <div class="page">
+        <nav class="sidebar" aria-label="Main navigation">
+            <div class="sidebar__wordmark">PLAYTRACE</div>
+            <nav aria-label="Navigation links">
+                <ul class="sidebar__list">
+                    <li><a href="../showcase/playtrace.html" class="sidebar__link"><span>01</span> Overview</a></li>
+                    <li><a href="library.html" class="sidebar__link"><span>02</span> Library</a></li>
+                    <li><a href="game-details.html" class="sidebar__link"><span>03</span> Game Details</a></li>
+                    <li><a href="achievements.html" class="sidebar__link sidebar__link--active"><span>04</span> Achievements</a></li>
+                </ul>
+            </nav>
+        </nav>
+
+        <main id="main" class="main">
+            <div class="content">
+                <section aria-labelledby="achievements-heading">
+                    <h1 id="achievements-heading" class="achievements__header">
+                        <span class="achievements__count">39</span>
+                        <span class="achievements__of">OF</span>
+                        <span class="achievements__total">40</span>
+                        <span class="achievements__percentage">97.5%</span>
+                    </h1>
+                    <progress max="40" value="39" class="achievements__progress" aria-label="NARAKA: BLADEPOINT achievements: 39 unlocked out of 40"></progress>
+                    <p class="achievements__grid-note">Connected game: NARAKA: BLADEPOINT</p>
+                </section>
+
+                <div class="achievements__main-grid">
+                    <section aria-labelledby="connected-heading">
+                        <h2 id="connected-heading" class="achievements__section-title">Connected games</h2>
+                        <div class="achievements__rarest-list">
+                            <article class="achievements__rarest-item">
+                                <span class="achievements__rarity-number">39/40</span>
+                                <span class="achievements__rarest-title">NARAKA: BLADEPOINT</span>
+                                <span class="achievements__rarest-game">97.5% complete</span>
+                            </article>
+                            <article class="achievements__rarest-item">
+                                <span class="achievements__rarity-number">—</span>
+                                <span class="achievements__rarest-title">Deadlock</span>
+                                <span class="achievements__rarest-game">Achievement data unavailable</span>
+                            </article>
+                        </div>
+                    </section>
+
+                    <section aria-labelledby="source-heading">
+                        <h2 id="source-heading" class="achievements__section-title">Data source</h2>
+                        <p class="achievements__grid-note">Only games connected in the PLAYTRACE library appear here. Individual achievement names are hidden when the connected data does not provide them.</p>
+                        <a href="https://steamcommunity.com/profiles/76561198334430826/achievements/1203220" target="_blank" rel="noopener noreferrer" class="achievement-list__link">View NARAKA achievements on Steam</a>
+                    </section>
+                </div>
+
+                <section aria-labelledby="status-heading">
+                    <h2 id="status-heading">Achievement status</h2>
+                    <div class="achievements__grid">
+                        <article class="achievements__tile achievements__tile--unlocked">
+                            <span class="achievements__tile-initials">39</span>
+                            <span class="achievements__tile-name">Unlocked</span>
+                            <span class="achievements__tile-game">NARAKA: BLADEPOINT</span>
+                            <span class="achievements__tile-state">connected data</span>
+                        </article>
+                        <article class="achievements__tile achievements__tile--locked">
+                            <span class="achievements__tile-initials achievements__tile-initials--outline">01</span>
+                            <span class="achievements__tile-name achievements__tile-name--muted">Remaining</span>
+                            <span class="achievements__tile-game achievements__tile-game--muted">NARAKA: BLADEPOINT</span>
+                            <span class="achievements__tile-state achievements__tile-state--muted">connected data</span>
+                        </article>
+                    </div>
+                </section>
+
+                <footer class="footer">
+                    <div class="footer__name">PLAYTRACE</div>
+                    <p>Connected game data only</p>
+                </footer>
+            </div>
+        </main>
+    </div>
+</body>
+</html>

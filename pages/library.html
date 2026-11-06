@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library - PLAYTRACE</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=IBM+Plex+Sans:wght@400;500;600&family=Barlow+Condensed:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/components.css">
+    <link rel="stylesheet" href="../css/library.css">
+    <link rel="stylesheet" href="../css/library-responsive.css">
+</head>
+<body>
+    <a href="#main" class="skip-link">Skip to main content</a>
+
+    <div class="page">
+        <nav class="sidebar" aria-label="Main navigation">
+            <div class="sidebar__wordmark">PLAYTRACE</div>
+            <nav aria-label="Navigation links">
+                <ul class="sidebar__list">
+                    <li>
+                        <a href="../showcase/playtrace.html" class="sidebar__link">
+                            <span>01</span> Overview
+                        </a>
+                    </li>
+                    <li>
+                        <a href="library.html" class="sidebar__link sidebar__link--active">
+                            <span>02</span> Library
+                        </a>
+                    </li>
+                    <li>
+                        <a href="game-details.html" class="sidebar__link">
+                            <span>03</span> Game Details
+                        </a>
+                    </li>
+                    <li>
+                        <a href="achievements.html" class="sidebar__link">
+                            <span>04</span> Achievements
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </nav>
+
+        <main id="main" class="main">
+            <div class="content">
+                <!-- Library header -->
+                <header class="library-header" aria-labelledby="library-heading">
+                    <p class="library-header__label">LIBRARY</p>
+                    <h1 id="library-heading">2 GAMES</h1>
+                    <p class="library-header__summary">4,874.8 HOURS / 39 OF 40 ACHIEVEMENTS</p>
+                </header>
+
+                <!-- Toolbar -->
+                <div class="library-toolbar" aria-label="Library filters and controls">
+                    <label for="search" class="visually-hidden">Search games</label>
+                    <input
+                        type="search"
+                        id="search"
+                        name="search"
+                        placeholder="Search games..."
+                        class="library-toolbar__search"
+                    >
+
+                    <div class="library-toolbar__sort">
+                        <label for="sort" class="library-toolbar__sort-label">Sort by</label>
+                        <select id="sort" name="sort" class="library-toolbar__sort select" aria-label="Sort games">
+                            <option value="hours">Hours</option>
+                            <option value="completion">Completion</option>
+                            <option value="title">Title A-Z</option>
+                        </select>
+                    </div>
+
+                    <div class="library-toolbar__filters">
+                        <a href="#" class="library-toolbar__filter-link" data-filter="all">All</a>
+                        <a href="#" class="library-toolbar__filter-link" data-filter="completed">Completed</a>
+                        <a href="#" class="library-toolbar__filter-link" data-filter="in-progress">In progress</a>
+                    </div>
+
+                    <p class="library-toolbar__note" aria-live="polite">2 games shown</p>
+                </div>
+
+                <!-- Game grid -->
+                <section aria-labelledby="games-heading" class="library-section">
+                    <h2 id="games-heading" class="visually-hidden">Games</h2>
+                    <div class="library-grid">
+                        <!-- NARAKA: BLADEPOINT -->
+                        <article class="library-tile" data-title="naraka bladepoint" data-hours="4140.5" data-completion="97.5" data-status="in-progress">
+                            <div class="library-tile__cover">
+                                <img
+                                    src="https://cdn.cloudflare.steamstatic.com/steam/apps/1203220/capsule_616x353.jpg"
+                                    alt="NARAKA: BLADEPOINT game cover"
+                                    class="library-tile__cover-image"
+                                    loading="lazy"
+                                >
+                            </div>
+                            <div class="library-tile__content">
+                                <h3 class="library-tile__title">NARAKA: BLADEPOINT</h3>
+                                <div class="library-tile__stats">
+                                    <span class="library-tile__stat">4,140.5 Hours</span>
+                                    <span class="library-tile__stat-badge library-tile__stat-badge--progress">In Progress</span>
+                                </div>
+                            </div>
+                        </article>
+
+                        <!-- Deadlock -->
+                        <article class="library-tile" data-title="deadlock" data-hours="734.3" data-completion="0" data-status="unknown">
+                            <div class="library-tile__cover">
+                                <img
+                                    src="https://cdn.cloudflare.steamstatic.com/steam/apps/1422450/header.jpg"
+                                    alt="Deadlock game cover"
+                                    class="library-tile__cover-image"
+                                    loading="lazy"
+                                >
+                            </div>
+                            <div class="library-tile__content">
+                                <h3 class="library-tile__title">Deadlock</h3>
+                                <div class="library-tile__stats">
+                                    <span class="library-tile__stat">734.3 Hours</span>
+                                    <span class="library-tile__stat-badge library-tile__stat-badge--unknown">Achievement data unavailable</span>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                </section>
+
+                <!-- Footer -->
+                <footer class="footer">
+                    <div class="footer__name">PLAYTRACE</div>
+                    <p>Sample data</p>
+                </footer>
+            </div>
+        </main>
+    </div>
+    <script src="../js/library.js" defer></script>
+</body>
+</html>

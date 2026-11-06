@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#06141B">
+  <title>Ritual — habit tracker</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500&family=Geist+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="/" aria-label="Ritual home"><span class="brand-mark">R</span><span>RITUAL</span></a>
+    <div class="topbar-actions">
+      <a class="text-button" href="/api/export.csv">Export CSV</a>
+      <button class="button button-accent" id="open-add" type="button">Add habit <span aria-hidden="true">+</span></button>
+    </div>
+  </header>
+
+  <main class="shell">
+    <section class="intro">
+      <div>
+        <p class="eyebrow">PERSONAL PRACTICE / <span id="today-label"></span></p>
+        <h1>Make the small<br><em>things</em> count.</h1>
+      </div>
+      <p class="intro-note">A quiet place to keep promises to yourself.</p>
+    </section>
+
+    <section class="stats-grid" aria-label="Weekly statistics">
+      <article class="stat-card"><span class="stat-label">This week</span><strong id="this-rate">—</strong><span id="this-detail" class="stat-detail">completion rate</span></article>
+      <article class="stat-card"><span class="stat-label">Last week</span><strong id="last-rate">—</strong><span id="last-detail" class="stat-detail">completion rate</span></article>
+      <article class="stat-card"><span class="stat-label">Best day</span><strong id="best-day">—</strong><span id="best-detail" class="stat-detail">keep showing up</span></article>
+      <article class="stat-card"><span class="stat-label">Most consistent</span><strong id="top-habit">—</strong><span id="top-detail" class="stat-detail">check-ins this week</span></article>
+    </section>
+
+    <div id="notice" class="notice" role="status" aria-live="polite"></div>
+
+    <section class="content-grid">
+      <div class="primary-column">
+        <div class="section-heading"><div><p class="eyebrow">DAILY LOG</p><h2>Today</h2></div><span class="section-meta" id="today-count">0 / 0 complete</span></div>
+        <div id="habit-list" class="habit-list"></div>
+        <button class="add-habit-row" id="list-add" type="button"><span aria-hidden="true">+</span> Add another habit</button>
+        <div id="empty-state" class="empty-state" hidden><span class="empty-index">00</span><h3>Start with one ritual.</h3><p>Choose something small enough to repeat and meaningful enough to matter.</p><button class="button button-accent" type="button" id="empty-add">Create your first habit</button></div>
+      </div>
+      <aside class="side-column">
+        <div class="section-heading"><div><p class="eyebrow">CONSISTENCY</p><h2>Last 12 months</h2></div><select id="heatmap-filter" class="heatmap-filter" aria-label="Heatmap habit"></select></div>
+        <div class="heatmap-wrap"><div class="heatmap-months" id="heatmap-months" aria-hidden="true"></div><div class="heatmap" id="heatmap" aria-label="Check-in activity for the last 12 months"></div><div class="heatmap-legend"><span>Less</span><i class="level-0"></i><i class="level-1"></i><i class="level-2"></i><i class="level-3"></i><i class="level-4"></i><span>More</span></div></div>
+        <div class="tip"><span class="tip-mark">/</span><p><strong>Consistency beats intensity.</strong><br>Rest days are part of the practice.</p></div>
+      </aside>
+    </section>
+
+    <section class="history-section">
+      <div class="section-heading"><div><p class="eyebrow">REPAIR THE RECORD</p><h2>Recent days</h2></div><span class="section-meta">up to 30 days back</span></div>
+      <div id="history" class="history-strip"></div>
+    </section>
+  </main>
+
+  <dialog id="habit-dialog">
+    <form method="dialog" id="habit-form">
+      <div class="dialog-heading"><div><p class="eyebrow">NEW PRACTICE</p><h2 id="dialog-title">Add a habit</h2></div><button class="icon-button" value="cancel" aria-label="Close dialog">×</button></div>
+      <input type="hidden" id="habit-id">
+      <label>Name <input id="habit-name" name="name" maxlength="100" placeholder="Study 2 hours"></label>
+      <div class="form-row"><label>Category <select id="habit-category"><option value="">None</option><option>Study</option><option>Health</option><option>Personal</option></select></label><label>Weekly target <select id="habit-target"><option value="1">1 day</option><option value="2">2 days</option><option value="3">3 days</option><option value="4">4 days</option><option value="5">5 days</option><option value="6">6 days</option><option value="7" selected>Every day</option></select></label></div>
+      <fieldset><legend>Color</legend><div class="color-options" id="color-options"></div></fieldset>
+      <div class="dialog-actions"><button class="button button-quiet" value="cancel">Cancel</button><button class="button button-accent" value="default">Save habit</button></div>
+    </form>
+  </dialog>
+  <script src="/app.js"></script>
+</body>
+</html>

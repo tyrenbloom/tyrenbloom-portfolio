@@ -1,0 +1,850 @@
+/* Layout containers */
+.page {
+    display: grid;
+    grid-template-columns: clamp(150px, 4vw, 200px) 1fr;
+    min-height: 100vh;
+    min-width: 360px;
+}
+
+/* Sidebar */
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    background-color: var(--bg);
+    border-right: 1px solid var(--surface-2);
+    padding: clamp(1rem, 2.5vw, 2rem) clamp(0.5rem, 1vw, 1rem);
+    grid-column: 1 / 2;
+}
+
+.sidebar__wordmark {
+    font-family: var(--font-heading);
+    font-size: clamp(1.25rem, 3vw, 1.75rem);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: clamp(2rem, 3vw, 3rem);
+    padding-bottom: clamp(0.5rem, 1vw, 0.75rem);
+    border-bottom: 1px solid var(--border);
+    color: var(--text);
+}
+
+.sidebar__link {
+    display: flex;
+    align-items: center;
+    gap: clamp(0.5rem, 1vw, 0.75rem);
+    padding: clamp(0.6rem, 1.2vw, 0.8rem) 0;
+    color: var(--text-muted);
+    font-family: var(--font-body);
+    text-decoration: none;
+    text-transform: capitalize;
+    font-size: clamp(0.8rem, 1.5vw, 0.9rem);
+    border-left: 3px solid transparent;
+    transition: border-color var(--transition), color var(--transition);
+}
+
+.sidebar__link:hover,
+.sidebar__link:focus {
+    color: var(--text);
+}
+
+.sidebar__link--active {
+    border-left-color: var(--accent);
+    color: var(--text);
+}
+
+.sidebar__link span {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    opacity: 0.5;
+}
+
+/* Main content area */
+.main {
+    padding: 0 clamp(0.75rem, 1.5vw, 1.5rem) clamp(2rem, 3vw, 4rem);
+    margin: 0;
+    min-height: 100vh;
+}
+
+.content {
+    max-width: none;
+}
+
+/* Player identity card */
+.player-identity {
+    display: grid;
+    grid-template-columns: clamp(140px, 3.5fr, 180px) clamp(1fr, 3fr, 460px);
+    gap: clamp(1.5rem, 4vw, 2.5rem);
+    margin-bottom: clamp(2rem, 4vw, 3rem);
+}
+
+.player-identity__avatar {
+    height: 100%;
+    aspect-ratio: 1;
+    background-color: var(--surface-2);
+    border: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-heading);
+    font-size: clamp(2.5rem, 6vw, 3.5rem);
+    font-weight: 600;
+    color: var(--text-muted);
+    text-transform: uppercase;
+}
+
+.player-identity__info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.player-identity__name {
+    font-size: clamp(1.75rem, 4vw, 2.5rem);
+    text-transform: uppercase;
+    margin-bottom: clamp(0.5rem, 1vw, 0.75rem);
+    color: var(--text);
+}
+
+.player-identity__stats-row {
+    display: flex;
+    gap: clamp(1rem, 2vw, 1.5rem);
+    font-family: var(--font-mono);
+    font-size: clamp(0.75rem, 1.5vw, 0.85rem);
+    color: var(--text-muted);
+}
+
+.player-identity__stat-item {
+    color: var(--text);
+}
+
+.player-identity__big-number {
+    font-family: var(--font-heading);
+    font-size: clamp(4rem, 12vw, 9rem);
+    line-height: 1;
+    letter-spacing: 0;
+    color: var(--text);
+}
+
+.player-identity__big-label {
+    font-family: var(--font-mono);
+    font-size: clamp(0.6rem, 1vw, 0.7rem);
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    color: var(--text-muted);
+    margin-bottom: clamp(0.5rem, 1vw, 0.75rem);
+}
+
+/* Most played game banner */
+.most-played-banner {
+    position: relative;
+    height: clamp(250px, 12vw, 460px);
+    background-color: var(--surface);
+    border: 1px solid var(--border);
+    overflow: hidden;
+    display: flex;
+    align-items: flex-end;
+}
+
+.most-played-banner__image {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    aspect-ratio: 460 / 215;
+}
+
+.most-played-banner__content {
+    position: relative;
+    padding: clamp(1rem, 2vw, 1.5rem) clamp(1rem, 1.5vw, 1.75rem);
+    background-color: var(--surface);
+    width: 100%;
+    border-top: 1px solid var(--border);
+    z-index: 1;
+}
+
+.most-played-banner__title {
+    font-size: clamp(1.25rem, 2.5vw, 1.8rem);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: clamp(0.3rem, 0.5vw, 0.5rem);
+    color: var(--text);
+}
+
+.most-played-banner__hours {
+    font-family: var(--font-mono);
+    font-size: clamp(0.85rem, 1.5vw, 1rem);
+    color: var(--accent);
+    text-transform: uppercase;
+}
+
+/* Ranked games list */
+.ranked-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    margin-bottom: clamp(2rem, 3vw, 3rem);
+}
+
+.ranked-list__item {
+    display: grid;
+    grid-template-columns: clamp(40px, 1fr) clamp(80px, 1fr) clamp(4fr, 1fr) clamp(4fr, 1fr);
+    align-items: center;
+    padding: clamp(0.6rem, 1vw, 0.8rem) 0;
+    border-bottom: 1px solid var(--border);
+    gap: clamp(0.5rem, 1vw, 0.75rem);
+}
+
+.ranked-list__item:first-child {
+    border-top: 1px solid var(--border);
+}
+
+.ranked-list__rank {
+    font-family: var(--font-mono);
+    font-size: clamp(1.25rem, 2vw, 1.5rem);
+    color: var(--text-muted);
+    line-height: 1;
+}
+
+.ranked-list__thumbnail {
+    width: clamp(50px, 1.5fr, 80px);
+    height: clamp(30px, 1fr, 48px);
+    object-fit: cover;
+    aspect-ratio: 460 / 215;
+    background-color: var(--surface-2);
+    border: 1px solid var(--border);
+}
+
+.ranked-list__title {
+    font-size: clamp(0.8rem, 1.5vw, 0.95rem);
+    line-height: clamp(1.3, 2vw, 1.4);
+    color: var(--text);
+}
+
+.ranked-list__hours {
+    font-family: var(--font-mono);
+    font-size: clamp(0.75rem, 1.5vw, 0.85rem);
+    color: var(--text-muted);
+}
+
+.ranked-list__bar {
+    height: clamp(3px, 0.8vw, 4px);
+    background-color: var(--surface-2);
+    margin-top: clamp(0.3rem, 0.5vw, 0.5rem);
+}
+
+.ranked-list__bar--active {
+    background-color: var(--accent);
+}
+
+/* Achievement section */
+.achievement-section {
+    display: grid;
+    grid-template-columns: clamp(200px, 3fr, 240px) 1fr;
+    gap: clamp(1.5rem, 3vw, 2.5rem);
+    margin-bottom: clamp(2rem, 3vw, 3rem);
+}
+
+.achievement-section__ring {
+    aspect-ratio: 1;
+    border-radius: 0;
+    background: conic-gradient(var(--accent) 0deg 263.52deg, var(--surface-2) 263.52deg 360deg);
+    border: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.achievement-section__ring::after {
+    content: '0%';
+    font-family: var(--font-heading);
+    font-size: clamp(3rem, 8vw, 4rem);
+    line-height: 1;
+    color: var(--text);
+}
+
+.achievement-section__list {
+    display: grid;
+    gap: clamp(1rem, 1.5vw, 1.25rem);
+}
+
+.achievement-list__item {
+    display: grid;
+    grid-template-columns: clamp(4fr, 1fr) clamp(3fr, 1fr) clamp(3fr, 1fr);
+    gap: clamp(0.5rem, 1vw, 0.75rem);
+    padding: clamp(0.5rem, 1vw, 0.75rem) 0;
+    border-bottom: 1px solid var(--border);
+}
+
+.achievement-list__item:last-child {
+    border-bottom: none;
+}
+
+.achievement-list__item[data-complete="true"] .achievement-list__progress {
+    color: var(--accent);
+}
+
+.achievement-list__progress {
+    font-family: var(--font-mono);
+    font-size: clamp(0.75rem, 1.5vw, 0.85rem);
+    color: var(--text-muted);
+}
+
+.achievement-list__item[data-complete="true"] .achievement-list__progress::after {
+    content: ' COMPLETE';
+    color: var(--accent);
+}
+
+.achievement-list__game-title {
+    font-size: clamp(0.8rem, 1.5vw, 0.92rem);
+    color: var(--text);
+}
+
+.achievement-list__complete-text {
+    font-family: var(--font-mono);
+    font-size: clamp(0.7rem, 1vw, 0.75rem);
+    color: var(--text-muted);
+}
+
+/* Progress bars - for progress element styling */
+progress {
+    width: 100%;
+    height: clamp(3px, 0.6vw, 4px);
+    border: none;
+    background-color: var(--surface-2);
+    border-radius: var(--radius);
+}
+
+progress::-webkit-progress-bar {
+    background-color: var(--surface-2);
+    border-radius: var(--radius);
+}
+
+progress::-webkit-progress-value {
+    background-color: var(--accent);
+    border-radius: var(--radius);
+}
+
+progress::-moz-progress-bar {
+    background-color: var(--accent);
+    border-radius: var(--radius);
+}
+
+/* Footer */
+.footer {
+    margin-top: auto;
+    padding-top: clamp(1rem, 2vw, 1.5rem);
+    border-top: 1px solid var(--border);
+    font-family: var(--font-mono);
+    font-size: clamp(0.7rem, 1vw, 0.8rem);
+    color: var(--text-muted);
+    text-align: center;
+}
+
+.footer__name {
+    color: var(--text);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: clamp(0.25rem, 0.5vw, 0.5rem);
+}
+
+/* Utility classes */
+.stat-value {
+    font-family: var(--font-mono);
+    font-weight: 600;
+    color: var(--text);
+}
+
+.stat-label {
+    font-size: clamp(0.7rem, 1vw, 0.75rem);
+    text-transform: uppercase;
+    color: var(--text-muted);
+}
+/* library */
+.library-header {
+    margin-bottom: clamp(1.5rem, 3vw, 2rem);
+}
+
+.library-header__label {
+    font-family: var(--font-mono);
+    font-size: clamp(0.7rem, 1vw, 0.8rem);
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    margin: 0 0 clamp(0.5rem, 1vw, 0.75rem);
+}
+
+.library-header__title {
+    font-family: var(--font-heading);
+    font-size: clamp(2rem, 5vw, 3rem);
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    margin: 0 0 clamp(0.75rem, 1.5vw, 1rem);
+    color: var(--text);
+}
+
+.library-header__summary {
+    font-family: var(--font-mono);
+    font-size: clamp(0.85rem, 1.5vw, 1rem);
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin: 0;
+}
+
+.library-toolbar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: clamp(1rem, 2vw, 1.5rem);
+    padding: clamp(1rem, 1.5vw, 1.25rem);
+    background-color: var(--surface);
+    border: 1px solid var(--border);
+    margin-bottom: clamp(2rem, 3vw, 3rem);
+    align-items: center;
+}
+
+.library-toolbar__search {
+    flex: 1;
+    min-width: clamp(200px, 4fr, 300px);
+    padding: clamp(0.5rem, 1vw, 0.75rem);
+    background-color: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    font-family: var(--font-mono);
+    font-size: clamp(0.8rem, 1.2vw, 0.9rem);
+    color: var(--text);
+    transition: border-color var(--transition);
+}
+
+.library-toolbar__search:focus {
+    outline: none;
+    border-color: var(--accent);
+}
+
+.library-toolbar__sort select {
+    padding: clamp(0.5rem, 1vw, 0.75rem);
+    background-color: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    font-family: var(--font-mono);
+    font-size: clamp(0.75rem, 1.2vw, 0.85rem);
+    color: var(--text);
+    cursor: pointer;
+    transition: border-color var(--transition);
+}
+
+.library-toolbar__sort select:focus {
+    outline: none;
+    border-color: var(--accent);
+}
+
+.library-toolbar__filters {
+    display: flex;
+    gap: clamp(0.5rem, 1vw, 0.75rem);
+}
+
+.library-toolbar__note {
+    font-family: var(--font-mono);
+    font-size: clamp(0.7rem, 0.9vw, 0.75rem);
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-left: auto;
+}
+
+.library-toolbar__filters a {
+    padding: clamp(0.4rem, 0.8vw, 0.5rem);
+    font-family: var(--font-mono);
+    font-size: clamp(0.7rem, 1vw, 0.8rem);
+    color: var(--text-muted);
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    transition: color, border-color;
+    border: 1px solid transparent;
+}
+
+.library-toolbar__filters a:hover,
+.library-toolbar__filters a:focus {
+    color: var(--text);
+    border-color: var(--accent);
+}
+
+.library-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(clamp(240px, 28vw, 320px), 1fr));
+    gap: clamp(1rem, 2vw, 1.5rem);
+    margin-bottom: clamp(2rem, 3vw, 3rem);
+}
+
+.library-grid__feature-item {
+    grid-column: span 2;
+}
+
+.library-tile {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--surface);
+    border: 1px solid var(--border);
+    text-decoration: none;
+    transition: border-color var(--transition);
+    height: 100%;
+}
+
+.library-tile:hover,
+.library-tile:focus {
+    border-color: var(--accent);
+}
+
+.library-tile__image {
+    width: 100%;
+    aspect-ratio: 460 / 215;
+    object-fit: cover;
+    background-color: var(--surface-2);
+    border-bottom: 1px solid var(--border);
+}
+
+.library-tile__content {
+    padding: clamp(0.75rem, 1.5vw, 1rem);
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.library-tile__title {
+    font-family: var(--font-heading);
+    font-size: clamp(0.9rem, 1.5vw, 1rem);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin: 0 0 clamp(0.5rem, 1vw, 0.75rem);
+    color: var(--text);
+}
+
+.library-tile__hours {
+    font-family: var(--font-mono);
+    font-size: clamp(0.75rem, 1.2vw, 0.85rem);
+    color: var(--text-muted);
+    margin-bottom: clamp(0.75rem, 1vw, 1rem);
+}
+
+.library-tile__progress-container {
+    margin-top: auto;
+}
+
+.library-tile__progress-label {
+    display: flex;
+    justify-content: space-between;
+    font-family: var(--font-mono);
+    font-size: clamp(0.7rem, 1vw, 0.8rem);
+    color: var(--text-muted);
+    margin-bottom: clamp(0.3rem, 0.5vw, 0.5rem);
+}
+
+.library-tile__progress-bar {
+    height: clamp(2px, 0.5vw, 3px);
+    background-color: var(--surface-2);
+}
+
+.library-tile__progress-bar--active {
+    background-color: var(--accent);
+}
+
+.library-tile--completed {
+    border-color: var(--accent);
+}
+
+.library-tile--completed .library-tile__title {
+    color: var(--accent);
+}
+
+.library-tile--completed .library-tile__times {
+    color: var(--accent);
+}
+
+.library-tile__times {
+    font-family: var(--font-mono);
+    font-size: clamp(0.75rem, 1vw, 0.8rem);
+    color: var(--text-muted);
+}
+
+.library-tile__times span {
+    margin-left: 8px;
+}
+
+.library-tile .archive-badge {
+    position: absolute;
+    top: clamp(0.5rem, 1vw, 0.75rem);
+    right: clamp(0.5rem, 1vw, 0.75rem);
+    padding: clamp(0.25rem, 0.5vw, 0.375rem);
+    background-color: var(--accent);
+    color: var(--bg);
+    font-family: var(--font-mono);
+    font-size: clamp(0.65rem, 1vw, 0.75rem);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    border-radius: var(--radius);
+}
+
+.ENDCSS
+
+/* game-details */
+.game-detail-back {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-family: var(--font-mono);
+    font-size: clamp(0.7rem, 1vw, 0.8rem);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--text-muted);
+    text-decoration: none;
+    margin-bottom: clamp(1rem, 2vw, 1.5rem);
+    transition: color var(--transition);
+}
+
+.game-detail-back:hover,
+.game-detail-back:focus {
+    color: var(--accent);
+}
+
+.game-detail-banner {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 96 / 31;
+    overflow: hidden;
+    border: 1px solid var(--border);
+    background-color: var(--surface);
+}
+
+.game-detail-banner__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.game-detail-banner__title-strip {
+    background-color: var(--surface);
+    padding: clamp(0.75rem, 1.5vw, 1rem) clamp(1rem, 2vw, 1.5rem);
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+}
+
+.game-detail-banner__title {
+    font-size: clamp(1.5rem, 3vw, 2.25rem);
+    margin: 0;
+    color: var(--text);
+}
+
+.game-detail-stats {
+    display: flex;
+    flex-wrap: wrap;
+    border: 1px solid var(--border);
+    border-top: none;
+    margin-bottom: clamp(1.5rem, 3vw, 2.5rem);
+}
+
+.game-detail-stat {
+    flex: 1 1 clamp(120px, 25%, 200px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: clamp(0.25rem, 0.5vw, 0.4rem);
+    padding: clamp(0.75rem, 1.5vw, 1.25rem) clamp(0.5rem, 1vw, 0.75rem);
+    border-right: 1px solid var(--border);
+}
+
+.game-detail-stat:last-child {
+    border-right: none;
+}
+
+.game-detail-stat__value {
+    font-family: var(--font-mono);
+    font-size: clamp(1rem, 2vw, 1.4rem);
+    font-weight: 600;
+    color: var(--text);
+    line-height: 1;
+}
+
+.game-detail-stat__label {
+    font-family: var(--font-mono);
+    font-size: clamp(0.6rem, 0.9vw, 0.7rem);
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--text-muted);
+}
+
+.game-detail-body {
+    display: grid;
+    grid-template-columns: clamp(220px, 4fr, 320px) 1fr;
+    gap: clamp(1.5rem, 3vw, 2.5rem);
+    align-items: start;
+}
+
+.game-detail-sidebar {
+    position: sticky;
+    top: clamp(1rem, 2vw, 1.5rem);
+    display: flex;
+    flex-direction: column;
+    gap: clamp(0.75rem, 1.5vw, 1rem);
+    padding: clamp(1rem, 2vw, 1.5rem);
+    border: 1px solid var(--border);
+    background-color: var(--surface);
+}
+
+.game-detail-completion {
+    font-family: var(--font-heading);
+    font-size: clamp(3rem, 8vw, 5rem);
+    line-height: 1;
+    color: var(--accent);
+    margin: 0;
+}
+
+.game-detail-completion__label {
+    font-family: var(--font-mono);
+    font-size: clamp(0.65rem, 1vw, 0.75rem);
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    color: var(--text-muted);
+    margin: 0;
+}
+
+.game-detail-sidebar progress {
+    width: 100%;
+    height: clamp(4px, 0.6vw, 6px);
+}
+
+.game-detail-dl {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: clamp(0.4rem, 0.8vw, 0.6rem) clamp(0.75rem, 1.5vw, 1rem);
+    margin: 0;
+    font-family: var(--font-mono);
+    font-size: clamp(0.7rem, 1.1vw, 0.8rem);
+}
+
+.game-detail-dl dt {
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+
+.game-detail-dl dd {
+    color: var(--text);
+    margin: 0;
+}
+
+.game-detail-section {
+    margin-bottom: clamp(1.5rem, 3vw, 2.5rem);
+}
+
+.game-detail-section__heading {
+    font-size: clamp(1.1rem, 2vw, 1.4rem);
+    margin-bottom: clamp(0.75rem, 1.5vw, 1rem);
+    padding-bottom: clamp(0.4rem, 0.8vw, 0.6rem);
+    border-bottom: 1px solid var(--border);
+}
+
+.game-detail-achievements {
+    display: flex;
+    flex-direction: column;
+    gap: clamp(0.6rem, 1.2vw, 0.85rem);
+}
+
+.game-detail-achievement {
+    display: grid;
+    grid-template-columns: 64px 1fr;
+    gap: clamp(0.75rem, 1.5vw, 1rem);
+    align-items: start;
+    padding: clamp(0.75rem, 1.5vw, 1rem);
+    border: 1px solid var(--border);
+    background-color: var(--surface);
+}
+
+.game-detail-achievement--locked {
+    color: var(--text-muted);
+    border-style: dashed;
+    border-color: var(--text-muted);
+    background-color: var(--bg);
+}
+
+.game-detail-achievement__icon {
+    width: 64px;
+    height: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-mono);
+    font-size: 1rem;
+    font-weight: 600;
+    background-color: var(--accent);
+    color: var(--bg);
+    border: 1px solid var(--accent);
+    flex-shrink: 0;
+}
+
+.game-detail-achievement__icon--locked {
+    background-color: transparent;
+    color: var(--text-muted);
+    border: 1px solid var(--text-muted);
+    border-style: dashed;
+}
+
+.game-detail-achievement__info {
+    display: flex;
+    flex-direction: column;
+    gap: clamp(0.25rem, 0.5vw, 0.4rem);
+    min-width: 0;
+}
+
+.game-detail-achievement__name {
+    font-family: var(--font-heading);
+    font-size: clamp(1rem, 1.8vw, 1.25rem);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin: 0;
+    color: var(--text);
+}
+
+.game-detail-achievement--locked .game-detail-achievement__name {
+    color: var(--text-muted);
+}
+
+.game-detail-achievement__desc {
+    font-size: clamp(0.75rem, 1.2vw, 0.85rem);
+    color: var(--text-muted);
+    margin: 0;
+    line-height: 1.5;
+}
+
+.game-detail-achievement--locked .game-detail-achievement__desc {
+    color: var(--text-muted);
+}
+
+.game-detail-achievement__status {
+    font-family: var(--font-mono);
+    font-size: clamp(0.65rem, 1vw, 0.75rem);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--accent);
+    margin: 0;
+}
+
+.game-detail-achievement--locked .game-detail-achievement__status {
+    color: var(--text-muted);
+}
+
+.game-detail-notice {
+    font-family: var(--font-mono);
+    font-size: clamp(0.65rem, 1vw, 0.75rem);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--text-muted);
+    margin: clamp(1rem, 2vw, 1.5rem) 0 0;
+}
+

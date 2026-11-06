@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Details - PLAYTRACE</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=IBM+Plex+Sans:wght@400;500;600&family=Barlow+Condensed:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/components.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+</head>
+<body>
+    <a href="#main" class="skip-link">Skip to main content</a>
+
+    <div class="page">
+        <nav class="sidebar" aria-label="Main navigation">
+            <div class="sidebar__wordmark">PLAYTRACE</div>
+            <nav aria-label="Navigation links">
+                <ul class="sidebar__list">
+                    <li>
+                        <a href="../showcase/playtrace.html" class="sidebar__link">
+                            <span>01</span> Overview
+                        </a>
+                    </li>
+                    <li>
+                        <a href="library.html" class="sidebar__link">
+                            <span>02</span> Library
+                        </a>
+                    </li>
+                    <li>
+                        <a href="game-details.html" class="sidebar__link sidebar__link--active">
+                            <span>03</span> Game Details
+                        </a>
+                    </li>
+                    <li>
+                        <a href="achievements.html" class="sidebar__link">
+                            <span>04</span> Achievements
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </nav>
+
+        <main id="main" class="main">
+            <div class="content">
+                <a href="library.html" class="game-detail-back">&larr; Back to library</a>
+
+                <section class="game-detail-banner" aria-labelledby="game-title">
+                    <div class="game-detail-banner__title-strip">
+                        <div class="game-detail-banner__title-image">
+                            <img
+                                src="https://cdn.cloudflare.steamstatic.com/steam/apps/1203220/capsule_616x353.jpg"
+                                alt="NARAKA: BLADEPOINT game cover"
+                                class="game-detail-banner__image"
+                            >
+                        </div>
+                        <h1 id="game-title" class="game-detail-banner__title">NARAKA: BLADEPOINT</h1>
+                    </div>
+                </section>
+
+                <div class="game-detail-stats" role="list" aria-label="Game statistics">
+                    <div class="game-detail-stat" role="listitem">
+                        <span class="game-detail-stat__value">4,140.5</span>
+                        <span class="game-detail-stat__label">Hours</span>
+                    </div>
+                    <div class="game-detail-stat" role="listitem">
+                        <span class="game-detail-stat__value">39/40</span>
+                        <span class="game-detail-stat__label">Achievements</span>
+                    </div>
+                    <div class="game-detail-stat" role="listitem">
+                        <span class="game-detail-stat__value">97.5%</span>
+                        <span class="game-detail-stat__label">Completion</span>
+                    </div>
+                    <div class="game-detail-stat" role="listitem">
+                        <span class="game-detail-stat__value">Nov 2</span>
+                        <span class="game-detail-stat__label">Last played</span>
+                    </div>
+                </div>
+
+                <div class="game-detail-body">
+                    <aside class="game-detail-sidebar" aria-labelledby="completion-heading">
+                        <p class="game-detail-completion" id="completion-heading">97.5%</p>
+                        <p class="game-detail-completion__label">Completion</p>
+                        <progress max="40" value="39" aria-label="NARAKA: BLADEPOINT: 39 unlocked out of 40"></progress>
+                        <dl class="game-detail-dl">
+                            <dt>Hours played</dt>
+                            <dd>4,140.5</dd>
+                            <dt>Achievements</dt>
+                            <dd>39 / 40</dd>
+                            <dt>Completion</dt>
+                            <dd>97.5%</dd>
+                            <dt>Last played</dt>
+                            <dd>Nov 2</dd>
+                        </dl>
+                    </aside>
+
+                    <div class="game-detail-sections">
+                        <section class="game-detail-section" aria-labelledby="connected-data-heading">
+                            <h2 id="connected-data-heading" class="game-detail-section__heading">Connected achievement data</h2>
+                            <p class="game-detail-notice">NARAKA: BLADEPOINT has 39 of 40 achievements unlocked. Individual achievement names are available through Steam.</p>
+                            <a href="https://steamcommunity.com/profiles/76561198334430826/achievements/1203220" target="_blank" rel="noopener noreferrer" class="achievement-list__link">View achievements on Steam</a>
+                        </section>
+                    </div>
+                </div>
+
+                <footer class="footer">
+                    <div class="footer__name">PLAYTRACE</div>
+                    <p>Sample data</p>
+                </footer>
+            </div>
+        </main>
+    </div>
+</body>
+</html>
