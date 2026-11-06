@@ -204,6 +204,17 @@ a:focus-visible, button:focus-visible {
   line-height: 1.04;
 }
 
+.staggered-word {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(0.7em);
+  will-change: transform, opacity;
+}
+
+.staggered-word + .staggered-word {
+  margin-left: 0.22em;
+}
+
 .hero h1 span {
   color: var(--aqua);
 }
@@ -1016,6 +1027,10 @@ a:focus-visible, button:focus-visible {
 }
 
 @media (prefers-reduced-motion: reduce) {
+  .staggered-word {
+    opacity: 1;
+    transform: none;
+  }
   *, *::before, *::after {
     scroll-behavior: auto !important;
     transition-duration: 0.01ms !important;

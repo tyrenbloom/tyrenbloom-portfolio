@@ -57,9 +57,18 @@
       return;
     }
 
-    const surnameSpan = heroTitle ? heroTitle.querySelector('span') : null;
+    if (heroTitle.dataset.staggeredText === 'words') {
+      const words = heroTitle.textContent.trim().split(/\s+/);
+      heroTitle.innerHTML = words.map((word) => `<span class="staggered-word">${word}</span>`).join('');
+      gsap.fromTo(heroTitle.querySelectorAll('.staggered-word'),
+        { opacity: 0, y: '0.7em' },
+        { opacity: 1, y: 0, duration: 0.65, ease: 'power3.out', stagger: 0.045, delay: 0.25 }
+      );
+    }
 
-    if (heroTitle) {
+    const surnameSpan = heroTitle.dataset.staggeredText === 'words' ? null : heroTitle.querySelector('span');
+
+    if (heroTitle && heroTitle.dataset.staggeredText !== 'words') {
       gsap.fromTo(heroTitle, { opacity: 0, y: 40 }, { opacity: 1, y: 0, duration: 1, ease: 'power3.out', delay: 0.4 });
     }
 
