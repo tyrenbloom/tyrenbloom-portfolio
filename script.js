@@ -32,13 +32,13 @@
       index: '01',
       tagline: 'CONNECTED STEAM DATA',
       tags: 'WEB DEVELOPMENT · CSS GRID · DESIGN SYSTEM',
-      cover: '/assets/deadlock-hero.jpg',
+      cover: 'assets/deadlock-hero.jpg',
       role: 'Designer & developer',
       year: '2025',
       stack: 'HTML · CSS · JavaScript',
       description: 'A personal Steam-style gaming statistics site built from scratch, combining a responsive editorial layout with native progress visualizations and a focused design system.',
-      images: ['/assets/deadlock-hero.jpg', '/assets/deadlock-hero.jpg'],
-      liveUrl: '/showcase/playtrace.html',
+      images: ['assets/deadlock-hero.jpg', 'assets/deadlock-hero.jpg'],
+      liveUrl: 'showcase/playtrace.html',
       repoUrl: 'https://github.com/tyrenbloom/tyrenbloom-portfolio'
     },
     {
@@ -47,13 +47,13 @@
       index: '02',
       tagline: 'A QUIET PLACE TO KEEP PROMISES',
       tags: 'FULL-STACK · NODE.JS · SQLITE',
-      cover: '/assets/ritual-dashboard.png',
+      cover: 'assets/ritual-dashboard.png',
       role: 'Product designer & developer',
       year: '2026',
       stack: 'HTML · CSS · JavaScript · Express',
       description: 'A personal habit and study tracker for daily check-ins, streaks, calendar heatmaps, and weekly progress reviews.',
-      images: ['/assets/ritual-dashboard.png'],
-      liveUrl: '/ritual',
+      images: ['assets/ritual-dashboard.png'],
+      liveUrl: 'https://tyrenbloom-portfolio.onrender.com/ritual',
       repoUrl: 'https://github.com/tyrenbloom/tyrenbloom-portfolio'
     },
   ];
@@ -65,7 +65,7 @@
   }
 
   function renderShowcaseCard(project) {
-    return `<a class="showcase-card showcase-card--${project.slug}" href="/projects/${project.slug}" aria-label="View ${escapeShowcaseText(project.title)} project">
+    return `<a class="showcase-card showcase-card--${project.slug}" href="#project/${project.slug}" aria-label="View ${escapeShowcaseText(project.title)} project">
       <div class="showcase-card__visual">
         <img src="${project.cover}" alt="${escapeShowcaseText(project.title)} project cover" width="1920" height="780" loading="lazy" decoding="async">
         <div class="showcase-card__overlay"><span>${project.title} / ${project.index}</span><strong>${project.tagline}</strong></div>
@@ -83,7 +83,7 @@
     const position = showcaseProjects.findIndex((item) => item.slug === project.slug);
     const next = showcaseProjects[(position + 1) % showcaseProjects.length];
     return `<article class="project-detail__content">
-      <a class="project-detail__back" href="/#showcase">&larr; Back to projects</a>
+      <a class="project-detail__back" href="#showcase">&larr; Back to projects</a>
       <div class="project-detail__hero"><img src="${project.cover}" alt="${escapeShowcaseText(project.title)} project cover"></div>
       <p class="showcase-card__kicker">${project.tags}</p>
       <h1>${project.title}</h1>
@@ -91,7 +91,7 @@
       <p class="project-detail__description">${escapeShowcaseText(project.description)}</p>
       <div class="project-detail__actions"><a class="button button-primary" href="${project.liveUrl}">Live site <span>&rarr;</span></a><a class="button button-secondary" href="${project.repoUrl}" target="_blank" rel="noopener noreferrer">GitHub <span>&rarr;</span></a></div>
       <div class="project-detail__gallery">${project.images.map((image, index) => `<img src="${image}" alt="${escapeShowcaseText(project.title)} screenshot ${index + 1}" loading="lazy">`).join('')}</div>
-      <nav class="project-detail__nav" aria-label="Project navigation"><a href="/#showcase">&larr; Back to projects</a><a href="/projects/${next.slug}">Next project: ${next.title} &rarr;</a></nav>
+      <nav class="project-detail__nav" aria-label="Project navigation"><a href="#showcase">&larr; Back to projects</a><a href="#project/${next.slug}">Next project: ${next.title} &rarr;</a></nav>
     </article>`;
   }
 
@@ -101,7 +101,7 @@
     const showcase = document.getElementById('showcase');
     if (!grid || !detail || !showcase) return;
 
-    const projectSlug = window.location.pathname.match(/^\/projects\/([^/]+)\/?$/)?.[1];
+    const projectSlug = window.location.hash.match(/^#project\/([^/]+)\/?$/)?.[1];
     const project = showcaseProjects.find((item) => item.slug === projectSlug);
     if (project) {
       document.querySelectorAll('#main > section').forEach((section) => { section.hidden = true; });
