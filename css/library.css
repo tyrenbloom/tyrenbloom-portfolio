@@ -43,7 +43,7 @@
 
 .library-toolbar__search {
     flex: 1;
-    min-width: clamp(200px, 4fr, 300px);
+    min-width: clamp(200px, 20vw, 300px);
     padding: clamp(0.5rem, 1vw, 0.75rem);
     background-color: var(--bg);
     border: 1px solid var(--border);

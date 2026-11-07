@@ -74,7 +74,7 @@
 /* Player identity card */
 .player-identity {
     display: grid;
-    grid-template-columns: clamp(140px, 3.5fr, 180px) clamp(1fr, 3fr, 460px);
+    grid-template-columns: minmax(140px, 180px) minmax(0, 1fr);
     gap: clamp(1.5rem, 4vw, 2.5rem);
     margin-bottom: clamp(2rem, 4vw, 3rem);
 }
@@ -190,7 +190,7 @@
 
 .ranked-list__item {
     display: grid;
-    grid-template-columns: clamp(40px, 1fr) clamp(80px, 1fr) clamp(4fr, 1fr) clamp(4fr, 1fr);
+    grid-template-columns: 40px 80px minmax(0, 1fr) minmax(0, 1fr);
     align-items: center;
     padding: clamp(0.6rem, 1vw, 0.8rem) 0;
     border-bottom: 1px solid var(--border);
@@ -209,8 +209,8 @@
 }
 
 .ranked-list__thumbnail {
-    width: clamp(50px, 1.5fr, 80px);
-    height: clamp(30px, 1fr, 48px);
+    width: 80px;
+    height: 48px;
     object-fit: cover;
     aspect-ratio: 460 / 215;
     background-color: var(--surface-2);
@@ -242,7 +242,7 @@
 /* Achievement section */
 .achievement-section {
     display: grid;
-    grid-template-columns: clamp(200px, 3fr, 240px) 1fr;
+    grid-template-columns: minmax(200px, 240px) minmax(0, 1fr);
     gap: clamp(1.5rem, 3vw, 2.5rem);
     margin-bottom: clamp(2rem, 3vw, 3rem);
 }
@@ -273,7 +273,7 @@
 
 .achievement-list__item {
     display: grid;
-    grid-template-columns: clamp(4fr, 1fr) clamp(3fr, 1fr) clamp(3fr, 1fr);
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr);
     gap: clamp(0.5rem, 1vw, 0.75rem);
     padding: clamp(0.5rem, 1vw, 0.75rem) 0;
     border-bottom: 1px solid var(--border);
@@ -408,7 +408,7 @@ progress::-moz-progress-bar {
 
 .library-toolbar__search {
     flex: 1;
-    min-width: clamp(200px, 4fr, 300px);
+    min-width: clamp(200px, 20vw, 300px);
     padding: clamp(0.5rem, 1vw, 0.75rem);
     background-color: var(--bg);
     border: 1px solid var(--border);
@@ -681,7 +681,7 @@ progress::-moz-progress-bar {
 
 .game-detail-body {
     display: grid;
-    grid-template-columns: clamp(220px, 4fr, 320px) 1fr;
+    grid-template-columns: minmax(220px, 320px) minmax(0, 1fr);
     gap: clamp(1.5rem, 3vw, 2.5rem);
     align-items: start;
 }
@@ -847,4 +847,3 @@ progress::-moz-progress-bar {
     color: var(--text-muted);
     margin: clamp(1rem, 2vw, 1.5rem) 0 0;
 }
-

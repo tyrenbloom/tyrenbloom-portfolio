@@ -46,7 +46,7 @@
     }
 
     .achievement-list__item {
-        grid-template-columns: clamp(4fr, 1fr) clamp(2fr, 1fr) 1fr;
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr);
         gap: clamp(0.4rem, 0.8vw, 0.6rem);
         padding: clamp(0.5rem, 1vw, 0.7rem) 0;
     }
@@ -70,13 +70,13 @@
 
     /* Ranked list - adjust on mobile */
     .ranked-list__item {
-        grid-template-columns: clamp(40px, 1fr) clamp(1fr, 1fr) 1fr clamp(1.5fr, 2fr);
+        grid-template-columns: 40px 60px minmax(0, 1fr) minmax(0, 1fr);
         gap: clamp(0.4rem, 0.8vw, 0.6rem);
     }
 
     .ranked-list__thumbnail {
-        width: clamp(36px, 1fr, 60px);
-        height: clamp(21px, 1fr, 35px);
+        width: 60px;
+        height: 35px;
     }
 
     .ranked-list__title {
@@ -118,13 +118,13 @@
 /* Tablet breakpoint for layout adjustments */
 @media (min-width: 769px) and (max-width: 1024px) {
     .ranked-list__item {
-        grid-template-columns: clamp(50px, 1fr) clamp(100px, 1fr) 1fr clamp(2fr, 1fr);
+        grid-template-columns: 50px 100px minmax(0, 1fr) minmax(0, 1fr);
         gap: clamp(0.6rem, 1vw, 0.8rem);
     }
 
     .ranked-list__thumbnail {
-        width: clamp(50px, 1.5fr, 100px);
-        height: clamp(30px, 1fr, 60px);
+        width: 100px;
+        height: 60px;
     }
 }
 
@@ -135,12 +135,12 @@
     }
 
     .ranked-list__item:nth-child(n+6) .ranked-list__thumbnail {
-        width: clamp(60px, 0.8fr, 80px);
-        height: clamp(36px, 1fr, 48px);
+        width: 80px;
+        height: 48px;
     }
 
     .achievement-list__item {
-        grid-template-columns: clamp(5fr, 1fr) clamp(3fr, 1fr) clamp(3fr, 1fr);
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr);
         gap: clamp(0.75rem, 1.2vw, 1rem);
     }
 }
