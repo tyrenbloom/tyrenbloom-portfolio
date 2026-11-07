@@ -11,8 +11,14 @@ app.use('/api', api);
 app.use('/ritual', express.static(path.join(__dirname, '..', 'public')));
 app.get('/ritual', (req, res) => res.sendFile(path.join(__dirname, '..', 'public', 'index.html')));
 app.use('/assets', express.static(path.join(portfolioRoot, 'assets')));
+app.use('/css', express.static(path.join(portfolioRoot, 'css')));
+app.use('/js', express.static(path.join(portfolioRoot, 'js')));
+app.use('/pages', express.static(path.join(portfolioRoot, 'pages')));
+app.use('/showcase', express.static(path.join(portfolioRoot, 'showcase')));
 app.get('/styles.css', (req, res) => res.sendFile(path.join(portfolioRoot, 'styles.css')));
 app.get('/script.js', (req, res) => res.sendFile(path.join(portfolioRoot, 'script.js')));
+app.get('/antigravity.js', (req, res) => res.sendFile(path.join(portfolioRoot, 'antigravity.js')));
+app.get('/resume.pdf', (req, res) => res.sendFile(path.join(portfolioRoot, 'resume.pdf')));
 app.get('*', (req, res) => res.sendFile(path.join(portfolioRoot, 'index.html')));
 
 app.use((error, req, res, next) => {

@@ -36,10 +36,10 @@
       role: 'Designer & developer',
       year: '2025',
       stack: 'HTML · CSS · JavaScript',
-      description: 'A personal Steam-style gaming statistics site built from scratch, combining a responsive editorial layout with native progress visualizations and a focused design system.',
+      description: 'A Steam player-stats dashboard with Overview, Library, Game Details, and Achievements pages, built with HTML, CSS, and Steam data.',
       images: ['assets/deadlock-hero.jpg', 'assets/deadlock-hero.jpg'],
       liveUrl: 'showcase/playtrace.html',
-      repoUrl: 'https://github.com/tyrenbloom/tyrenbloom-portfolio'
+      codeUrl: 'https://github.com/tyrenbloom/tyrenbloom-portfolio'
     },
     {
       slug: 'ritual',
@@ -50,11 +50,11 @@
       cover: 'assets/ritual-dashboard.png',
       role: 'Product designer & developer',
       year: '2026',
-      stack: 'HTML · CSS · JavaScript · Express',
+      stack: 'HTML · CSS · JavaScript · LocalStorage',
       description: 'A personal habit and study tracker for daily check-ins, streaks, calendar heatmaps, and weekly progress reviews.',
       images: ['assets/ritual-dashboard.png'],
       liveUrl: 'https://tyrenbloom-portfolio.onrender.com/ritual',
-      repoUrl: 'https://github.com/tyrenbloom/tyrenbloom-portfolio'
+      codeUrl: 'https://github.com/tyrenbloom/tyrenbloom-portfolio'
     },
   ];
 
@@ -65,18 +65,22 @@
   }
 
   function renderShowcaseCard(project) {
-    return `<a class="showcase-card showcase-card--${project.slug}" href="#project/${project.slug}" aria-label="View ${escapeShowcaseText(project.title)} project">
+    return `<article class="showcase-card showcase-card--${project.slug}">
       <div class="showcase-card__visual">
         <img src="${project.cover}" alt="${escapeShowcaseText(project.title)} project cover" width="1920" height="780" loading="lazy" decoding="async">
         <div class="showcase-card__overlay"><span>${project.title} / ${project.index}</span><strong>${project.tagline}</strong></div>
       </div>
       <div class="showcase-card__details">
         <span class="showcase-card__kicker">${project.tags}</span>
-        <h3>${project.title}</h3>
+        <h3><a href="#project/${project.slug}">${project.title}</a></h3>
         <p class="showcase-card__subtitle">${escapeShowcaseText(project.description)}</p>
-        <span class="showcase-link">View project <span aria-hidden="true">&rarr;</span></span>
+        <div class="showcase-card__stack">${project.stack.split(' · ').map((tag) => `<span>${escapeShowcaseText(tag)}</span>`).join('')}</div>
+        <div class="showcase-card__links">
+          <a class="showcase-link" href="${project.liveUrl}"${project.liveUrl.startsWith('http') ? ' target="_blank" rel="noopener noreferrer"' : ''}>Live <span aria-hidden="true">&rarr;</span></a>
+          <a class="showcase-link" href="${project.codeUrl}" target="_blank" rel="noopener noreferrer">Code <span aria-hidden="true">&rarr;</span></a>
+        </div>
       </div>
-    </a>`;
+    </article>`;
   }
 
   function renderProjectDetail(project) {
@@ -89,7 +93,7 @@
       <h1>${project.title}</h1>
       <div class="project-detail__meta"><span><b>ROLE</b>${project.role}</span><span><b>YEAR</b>${project.year}</span><span><b>STACK</b>${project.stack}</span></div>
       <p class="project-detail__description">${escapeShowcaseText(project.description)}</p>
-      <div class="project-detail__actions"><a class="button button-primary" href="${project.liveUrl}">Live site <span>&rarr;</span></a><a class="button button-secondary" href="${project.repoUrl}" target="_blank" rel="noopener noreferrer">GitHub <span>&rarr;</span></a></div>
+      <div class="project-detail__actions"><a class="button button-primary" href="${project.liveUrl}"${project.liveUrl.startsWith('http') ? ' target="_blank" rel="noopener noreferrer"' : ''}>Live site <span>&rarr;</span></a><a class="button button-secondary" href="${project.codeUrl}" target="_blank" rel="noopener noreferrer">Code <span>&rarr;</span></a></div>
       <div class="project-detail__gallery">${project.images.map((image, index) => `<img src="${image}" alt="${escapeShowcaseText(project.title)} screenshot ${index + 1}" loading="lazy">`).join('')}</div>
       <nav class="project-detail__nav" aria-label="Project navigation"><a href="#showcase">&larr; Back to projects</a><a href="#project/${next.slug}">Next project: ${next.title} &rarr;</a></nav>
     </article>`;
@@ -115,17 +119,12 @@
       return;
     }
 
-    const main = document.getElementById('main');
-    const featured = document.getElementById('project');
-    const education = document.getElementById('education');
-    if (main && featured && education) {
-      main.insertBefore(showcase, featured);
-      main.insertBefore(featured, education);
-    }
-
     grid.innerHTML = showcaseProjects.map(renderShowcaseCard).join('');
     const cards = grid.querySelectorAll('.showcase-card');
-    if (prefersReducedMotion) return;
+    if (prefersReducedMotion) {
+      cards.forEach((card) => card.classList.add('is-revealed'));
+      return;
+    }
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {

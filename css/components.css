@@ -71,6 +71,18 @@
     max-width: none;
 }
 
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
 /* Player identity card */
 .player-identity {
     display: grid;
@@ -154,6 +166,7 @@
     height: 100%;
     object-fit: cover;
     aspect-ratio: 460 / 215;
+    background-color: var(--surface-2);
 }
 
 .most-played-banner__content {
@@ -301,6 +314,11 @@
 .achievement-list__game-title {
     font-size: clamp(0.8rem, 1.5vw, 0.92rem);
     color: var(--text);
+}
+
+.achievement-list__unavailable {
+    font-size: clamp(0.8rem, 1.5vw, 0.92rem);
+    color: var(--text-muted);
 }
 
 .achievement-list__complete-text {

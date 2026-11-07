@@ -17,56 +17,55 @@
     <div class="page">
         <nav class="sidebar" aria-label="Main navigation">
             <div class="sidebar__wordmark">PLAYTRACE</div>
-            <nav aria-label="Navigation links">
-                <ul class="sidebar__list">
-                    <li>
-                        <a href="playtrace.html" class="sidebar__link sidebar__link--active">
-                            <span>01</span> Overview
-                        </a>
-                    </li>
-                    <li>
-                        <a href="../pages/library.html" class="sidebar__link">
-                            <span>02</span> Library
-                        </a>
-                    </li>
-                    <li>
-                        <a href="../pages/game-details.html" class="sidebar__link">
-                            <span>03</span> Game Details
-                        </a>
-                    </li>
-                    <li>
-                        <a href="../pages/achievements.html" class="sidebar__link">
-                            <span>04</span> Achievements
-                        </a>
-                    </li>
-                </ul>
-            </nav>
+            <ul class="sidebar__list">
+                <li>
+                    <a href="../showcase/playtrace.html" class="sidebar__link sidebar__link--active">
+                        <span>01</span> Overview
+                    </a>
+                </li>
+                <li>
+                    <a href="../pages/library.html" class="sidebar__link">
+                        <span>02</span> Library
+                    </a>
+                </li>
+                <li>
+                    <a href="../pages/game-details.html" class="sidebar__link">
+                        <span>03</span> Game Details
+                    </a>
+                </li>
+                <li>
+                    <a href="../pages/achievements.html" class="sidebar__link">
+                        <span>04</span> Achievements
+                    </a>
+                </li>
+            </ul>
         </nav>
 
         <main id="main" class="main">
             <div class="content">
                 <header class="project-intro">
                     <span class="project-intro__eyebrow">Portfolio project / Steam data interface</span>
-                    <h1>PLAYTRACE</h1>
+                    <h1 id="page-title">PLAYTRACE</h1>
                     <p>Gaming statistics dashboard for connected Steam data.</p>
                 </header>
 
                 <!-- Steam data summary -->
                 <section class="overview-lead" aria-labelledby="player-heading">
-                    <div class="player-identity" id="player-heading">
+                    <h2 id="player-heading" class="visually-hidden">Player overview</h2>
+                    <div class="player-identity">
                         <div class="player-identity__info">
                             <div class="player-identity__big-number">4,874.8</div>
                             <div class="player-identity__big-label">Hours Played</div>
                             <div class="player-identity__stats-row">
                                 <span class="player-identity__stat-item">2 games</span>
-                                <span class="player-identity__stat-item">39/40 known</span>
-                                <span class="player-identity__stat-item">97.5% known</span>
+                                <span class="player-identity__stat-item">39/40 achievements unlocked</span>
+                                <span class="player-identity__stat-item">97.5% unlocked</span>
                             </div>
                         </div>
                     </div>
                     <div class="most-played-banner">
                         <img
-                            src="https://cdn.cloudflare.steamstatic.com/steam/apps/1203220/capsule_616x353.jpg"
+                            src="../assets/steam-naraka-cover.jpg"
                             alt="NARAKA: BLADEPOINT game cover"
                             class="most-played-banner__image"
                             width="616"
@@ -77,7 +76,7 @@
                         <div class="most-played-banner__content">
                             <h2 class="most-played-banner__title">NARAKA: BLADEPOINT</h2>
                             <div class="most-played-banner__hours">4,140.5 Hours</div>
-                            <div class="most-played-banner__hours">Last played Nov 2</div>
+                            <div class="most-played-banner__hours">Last played <time datetime="2026-11-02">Nov 2, 2026</time></div>
                         </div>
                     </div>
                 </section>
@@ -89,15 +88,15 @@
                         <ol class="ranked-list">
                             <li class="ranked-list__item">
                                 <span class="ranked-list__rank">01</span>
-                                <img src="https://cdn.cloudflare.steamstatic.com/steam/apps/1203220/capsule_616x353.jpg" alt="NARAKA: BLADEPOINT game cover" class="ranked-list__thumbnail" width="616" height="353" loading="lazy">
+                                <img src="../assets/steam-naraka-cover.jpg" alt="NARAKA: BLADEPOINT game cover" class="ranked-list__thumbnail" width="616" height="353" loading="lazy">
                                 <span class="ranked-list__title">NARAKA: BLADEPOINT</span>
-                                <span class="ranked-list__hours">4,140.5h · Nov 2</span>
+                                <span class="ranked-list__hours">4,140.5h · Nov 2, 2026</span>
                             </li>
                             <li class="ranked-list__item">
                                 <span class="ranked-list__rank">02</span>
-                                <img src="https://cdn.cloudflare.steamstatic.com/steam/apps/1422450/header.jpg" alt="Deadlock game cover" class="ranked-list__thumbnail" width="460" height="215" loading="lazy">
+                                <img src="../assets/steam-deadlock-cover.jpg" alt="Deadlock game cover" class="ranked-list__thumbnail" width="460" height="215" loading="lazy">
                                 <span class="ranked-list__title">Deadlock</span>
-                                <span class="ranked-list__hours">734.3h · Yesterday</span>
+                                <span class="ranked-list__hours">734.3h · Nov 6, 2026</span>
                             </li>
                         </ol>
                     </section>
@@ -123,7 +122,7 @@
                                     <div class="achievement-list__header">
                                         <span class="achievement-list__progress">Not available</span>
                                     </div>
-                                    <span class="achievement-list__game-title">Deadlock</span>
+                                    <span class="achievement-list__unavailable">Achievement data not provided</span>
                                 </article>
                             </div>
                         </div>
@@ -133,7 +132,7 @@
                 <!-- Footer -->
                 <footer class="footer">
                     <div class="footer__name">PLAYTRACE</div>
-                    <p>Connected Steam data · Portfolio preview</p>
+                    <p>Static snapshot from a public Steam profile, updated Nov 2026</p>
                 </footer>
             </div>
         </main>
