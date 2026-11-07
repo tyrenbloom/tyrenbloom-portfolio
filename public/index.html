@@ -8,13 +8,15 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500&family=Geist+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/style.css">
+  <link rel="stylesheet" href="/ritual/style.css">
 </head>
 <body>
   <header class="topbar">
     <a class="brand" href="/" aria-label="Ritual home"><span class="brand-mark">R</span><span>RITUAL</span></a>
     <div class="topbar-actions">
-      <a class="text-button" href="/api/export.csv">Export CSV</a>
+      <a class="text-button" href="#" id="export-csv">Export CSV</a>
+      <a class="text-button" href="#" id="download-backup">Backup JSON</a>
+      <a class="text-button" href="#" id="import-backup">Import JSON</a>
       <button class="button button-accent" id="open-add" type="button">Add habit <span aria-hidden="true">+</span></button>
     </div>
   </header>
@@ -67,6 +69,7 @@
       <div class="dialog-actions"><button class="button button-quiet" value="cancel">Cancel</button><button class="button button-accent" value="default">Save habit</button></div>
     </form>
   </dialog>
-  <script src="/app.js"></script>
+  <script src="/ritual/store.js"></script>
+  <script src="/ritual/app.js"></script>
 </body>
 </html>
