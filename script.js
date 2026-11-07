@@ -101,6 +101,10 @@
     const showcase = document.getElementById('showcase');
     if (!grid || !detail || !showcase) return;
 
+    document.querySelectorAll('#main > section').forEach((section) => { section.hidden = false; });
+    detail.hidden = true;
+    detail.innerHTML = '';
+
     const projectSlug = window.location.hash.match(/^#project\/([^/]+)\/?$/)?.[1];
     const project = showcaseProjects.find((item) => item.slug === projectSlug);
     if (project) {
@@ -691,6 +695,7 @@
   // INITIALIZATION
   // ============================================
   function init() {
+    window.addEventListener('hashchange', initShowcase);
     initShowcase();
     initNativeHeroTextReveal();
     const hasLoadedScripts = typeof gsap !== 'undefined' && gsap.registerPlugin;
