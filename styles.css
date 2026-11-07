@@ -636,6 +636,52 @@ a:focus-visible, button:focus-visible {
   line-height: 1.75;
 }
 
+.resume-section {
+  scroll-margin-top: 78px;
+}
+
+.resume-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  gap: 48px;
+  padding-left: 4px;
+}
+
+.resume-summary .button {
+  margin-top: 20px;
+}
+
+.resume-details {
+  display: grid;
+  gap: 0;
+  border-top: 1px solid var(--line);
+}
+
+.resume-details article {
+  padding: 22px 4px;
+  border-bottom: 1px solid var(--line);
+}
+
+.resume-label {
+  color: var(--ink-soft);
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.08em;
+}
+
+.resume-details h3 {
+  margin: 10px 0 5px;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.resume-details p {
+  margin: 0;
+  color: var(--ink-soft);
+  font-size: 13px;
+  line-height: 1.65;
+}
+
 /* ============================================
    3D HOVER EFFECTS
    ============================================ */
@@ -997,6 +1043,12 @@ a:focus-visible, button:focus-visible {
 
   .skills-grid {
     grid-template-columns: 1fr;
+  }
+
+  .resume-grid {
+    grid-template-columns: 1fr;
+    gap: 28px;
+    padding-left: 0;
   }
 
   .skill-card {

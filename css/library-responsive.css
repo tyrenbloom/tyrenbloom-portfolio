@@ -30,7 +30,9 @@
     }
 
     .library-toolbar__filters {
-        justify-content: center;
+        justify-content: flex-start;
+        flex-wrap: wrap;
+        gap: 0.5rem;
     }
 
     .library-toolbar__note {

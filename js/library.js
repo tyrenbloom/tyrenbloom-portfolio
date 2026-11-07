@@ -48,6 +48,7 @@
             activeFilter = filter.dataset.filter;
             filters.forEach(function (item) {
                 item.classList.toggle('library-toolbar__filter-link--active', item === filter);
+                item.setAttribute('aria-pressed', item === filter ? 'true' : 'false');
             });
             update();
         });
@@ -57,6 +58,7 @@
     sort.addEventListener('change', update);
     filters.forEach(function (filter) {
         filter.classList.toggle('library-toolbar__filter-link--active', filter.dataset.filter === activeFilter);
+        filter.setAttribute('aria-pressed', filter.dataset.filter === activeFilter ? 'true' : 'false');
     });
     update();
 })();

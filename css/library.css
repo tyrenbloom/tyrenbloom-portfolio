@@ -96,7 +96,10 @@
 }
 
 .library-toolbar__filter-link {
+    min-height: 44px;
     padding: clamp(0.4rem, 0.8vw, 0.5rem);
+    background: transparent;
+    cursor: pointer;
     font-family: var(--font-mono);
     font-size: clamp(0.7rem, 1vw, 0.8rem);
     color: var(--text-muted);
